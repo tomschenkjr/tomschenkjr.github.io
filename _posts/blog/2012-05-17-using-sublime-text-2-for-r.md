@@ -59,7 +59,7 @@ Comments have a lighter tone. So does the ubiquitous "&lt;-". Functions and spec
 
 Once you type a variable or function names, you can easily reference it later for autocompletion. Load the data into a variable called "sampleData" and you only need to type "sa" and hit tab to complete the name. If there are multiple possible matches, then you can use arrow keys to choose. The limitation of this, however, is that Sublime Text treats "sample.data" as two separate names. To counter this, I've started to use underscores, which is friendlier. Also, Sublime Text is using a simple approach--it simply refers to what you've typed before, it is not remembering variables in your memory the same way the GUI interfaces do.
 <blockquote>Click on Preferences &gt; Key Bindings - User, then copy and paste the following (thanks G-Force!)</blockquote>
-<p style="text-align: center;">[gist]https://gist.github.com/3050337[/gist]</p>
+{% gist 3050337 %}
 There are plenty of shortcuts. Select a few lines of code and press <strong>Ctrl + /</strong> to toggle comments. <strong>Ctrl + L</strong> will select the entire line based on your cursor. <strong>Ctrl + G</strong>, type in a number and you'll jump to that line of code. Type <strong>Ctrl + :</strong> and type a variable name, it'll find all instances. If you have multiple tabs, type <strong>Ctrl + P</strong> and you can jump to specific tabs.
 
 At this point, however, you can't execute or "compile" code. It's just pretty font, helpful quirks, and shortcuts.
@@ -82,7 +82,7 @@ Now,
 
 For example, you might paste:
 
-[gist]https://gist.github.com/2859378[/gist]
+{% gist 2859378 %}
 
 Notice in my example that I am ignoring (disabled) some packages I have installed. In order for this to work, I needed to add a comma after the bracket on line 8 and pasted the "default_extend_env" within the curly brackets.
 
@@ -98,7 +98,7 @@ I have a proposed set that should be pretty R user friendly. You can select some
 
 To enable new keybindings:
 <blockquote>Go to Preferences &gt; Key Bindings - User and paste the code below. If something if already there, then append the code to the bottom (thanks Wojciech!).</blockquote>
-[gist]https://gist.github.com/2790415[/gist]
+{% gist 2790415 %}
 
 You can also execute a line of code--without highlighting--using <strong>Ctrl + Alt + R</strong>. Select line(s) of code and send it to the console by typing <strong>Ctrl + Shift + R</strong> and then hitting <strong>R</strong> again. Similarly, display a line of code using <strong>Ctrl + Alt + R</strong> and then typing <strong>R</strong> again.
 
