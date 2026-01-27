@@ -30,11 +30,17 @@ Even though recessions are becoming less frequent (e.g., great moderation), stat
 <blockquote>In 2009, the median error among states was an overestimate of 10.2 percent. That equated to an unexpected revenue shortfall of nearly $50 billion in person income, corporate income and sales tax revenues. In a year when state policy makers faced $63 billion in midyear budget gaps--coming atop $47 billion they had already closed when crafting their budgets--this misestimate posed a significant challenge.</blockquote>
 The similar pattern between Iowa and the nation is remarkable. Here is a<a href="http://tomschenkjr.net/2010/12/06/iowa-projecte-revenues-up-again/"> recent graph</a> that shows the relationship between Iowa revenue estimates and actual revenues for December:
 
-[caption id="attachment_459" align="aligncenter" width="600"]<a href="/images/rec-generalfund-03-111.png"><img class="size-full wp-image-459" title="REC-generalfund-03-11" src="/images/rec-generalfund-03-111.png" alt="" width="600" height="438" /></a> State net revenue in millions[/caption]
+<figure class="align-center">
+<a href="/images/rec-generalfund-03-111.png"><img src="/images/rec-generalfund-03-111.png" alt="State net revenue in millions" width="600" height="438" /></a>
+<figcaption>State net revenue in millions</figcaption>
+</figure>
 
 Project and actual are the same curves, but project is a bit lagged. A similar graph for all states shows a similar pattern:
 
-[caption id="attachment_1082" align="aligncenter" width="600"]<a href="/images/pew-staterevenueproj.png"><img class="size-full wp-image-1082" title="Pew-StateRevenueProj" src="/images/pew-staterevenueproj.png" alt="" width="600" height="345" /></a> Pew Center on the States/Nelson A. Rockefeller Institute for Government, Cracks in the Crystal Ball, Exhibit 4[/caption]
+<figure class="align-center">
+<a href="/images/pew-staterevenueproj.png"><img src="/images/pew-staterevenueproj.png" alt="Pew Center on the States/Nelson A. Rockefeller Institute for Government, Cracks in the Crystal Ball, Exhibit 4" width="600" height="345" /></a>
+<figcaption>Pew Center on the States/Nelson A. Rockefeller Institute for Government, Cracks in the Crystal Ball, Exhibit 4</figcaption>
+</figure>
 
 Again, revenues are overestimated at the beginning of a recession, underestimated during recoveries.
 
@@ -58,7 +64,10 @@ A fifth and sixth recommendation should be:
 </ul>
 My fifth recommendation is somewhat technical, but important. To illustrate the importance, consider projecting a path of a hurricane. Below is an example of such projections. The projections show the hurricane will hit New Orleans (this is 2008's <a href="http://en.wikipedia.org/wiki/Hurricane_Gustav">Hurricane Gustav</a>). But notice the margin of error around the projections? These are the estimated errors, and they are very important to forecasting.
 
-[caption id="" align="aligncenter" width="400"]<a href="http://www.watercrunch.com/2008/08/history-of-hurricane-predictions.html"><img title="Project Path of Hurricane Gustav" src="http://4.bp.blogspot.com/_C5lyb6Dp3LU/SLYBb4ZgkvI/AAAAAAAADoA/oItxU8cnFMg/s400/Picture+7.png" alt="" width="400" height="317" /></a> Projected path of Hurricane Gustav, via watercrunch.com[/caption]
+<figure class="align-center">
+<a href="http://www.watercrunch.com/2008/08/history-of-hurricane-predictions.html"><img src="http://4.bp.blogspot.com/_C5lyb6Dp3LU/SLYBb4ZgkvI/AAAAAAAADoA/oItxU8cnFMg/s400/Picture+7.png" alt="Projected path of Hurricane Gustav" width="400" height="317" /></a>
+<figcaption>Projected path of Hurricane Gustav, via watercrunch.com</figcaption>
+</figure>
 
 There are equally important to budget forecasts. If state revenue estimates are truly becoming more inaccurate, then that means these errors are becoming more important. If revenue projections aren't an exact science, then perhaps we should better present the data as an inexact science. Gustav? If you recall, didn't land in New Orleans, but in nearby Cocodrie--within the range of the hurricane's predicted path.
 
