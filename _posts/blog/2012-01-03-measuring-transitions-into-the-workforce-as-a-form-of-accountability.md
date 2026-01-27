@@ -28,7 +28,7 @@ tags:
   - publication
   - student achievement
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/01/air-bannder.png"><img class="aligncenter size-full wp-image-1468" title="air-banner" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/01/air-bannder.png" alt="" width="600" height="69" /></a>
+<a href="/images/air-bannder.png"><img class="aligncenter size-full wp-image-1468" title="air-banner" src="/images/air-bannder.png" alt="" width="600" height="69" /></a>
 
 My new publication in November's <a href="http://www3.airweb.org/?page=566">IR Applications</a>, which is published by the Association for Institutional Research:
 <blockquote>This paper explores the relationship between student major and industry of employment and its application to higher education accountability. Data provided by statewide longitudinal data systems (SLDS) have enabled state educational agencies and colleges to follow students into the workforce. While most studies have focused on wage outcomes, this study shows how to use SLDS data to understand the correlation between major and industry. The transition into the workforce is an important outcome since it is an assessment of a college’s ability to develop specific, targeted sectors of the economy. We use SLDS data from Iowa to follow community college alumni from 2002 through 2008.</blockquote>

@@ -22,7 +22,7 @@ There is good reason to believe this can be useful. The <a href="https://develo
 
 First, open data standards often rely on relational data models. For instance, data standards for inspections would depend on multiple tables: an inspection table, a table listing entities/business/buildings, a violation table, and so on.
 
-[caption id="attachment_2893" align="alignright" width="208"]<img class="wp-image-2893" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2016/04/hdscores-national.jpg" alt="hdscores-national" width="208" height="370" /> HDScores for food inspections[/caption]
+[caption id="attachment_2893" align="alignright" width="208"]<img class="wp-image-2893" src="/images/hdscores-national.jpg" alt="hdscores-national" width="208" height="370" /> HDScores for food inspections[/caption]
 
 But data portals do not handle relational data very well. So, as a result, a relational structure requires the first step to download or view all tables to be combined in an external program or programming language. While developers and programmers can handle those steps, it is significantly harder for non-technical users. Open Data has, rightly, been criticized for being too technical and this would not make it easier.
 
@@ -32,7 +32,7 @@ Data portals need to serve multiple audiences so the format needs to be both acc
 
 GTFS is an excellent example for the usefulness of data standards. However, GTFS is unique since it has existed purely as a technical specification since its inception. Bus and train schedules have been readily available as maps and people did not rely on machine-readable formats. But data such as business licenses, crimes, salaries, and more have been useful in their "spreadsheet" format. Moving to a relational model for these topics would degrade the experience while gambling on the hope for user-friendly apps.
 
-[caption id="attachment_2897" align="aligncenter" width="640"]<img class="wp-image-2897 size-large" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2016/04/portal-vs-standard-1024x480.png" alt="portal-vs-standard" width="640" height="300" /> Neither are perfect, but portals can serve programmers and non-technical users better than a relational schema[/caption]
+[caption id="attachment_2897" align="aligncenter" width="640"]<img class="wp-image-2897 size-large" src="/images/portal-vs-standard-1024x480.png" alt="portal-vs-standard" width="640" height="300" /> Neither are perfect, but portals can serve programmers and non-technical users better than a relational schema[/caption]
 
 Flexible solutions, such as RDF/RDFa/schema.org have not been able to gain traction in the larger web development community, so also unlikely to gain traction in open data.
 

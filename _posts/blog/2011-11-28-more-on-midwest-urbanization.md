@@ -27,11 +27,11 @@ tags:
 ---
 <a href="http://www.desmoinesregister.com/article/20111127/NEWS03/311270044/-1/gallery_array/Pockets-vitality-flourish-statistics-remain-grim">Kyle Munson</a> from <em>The Des Moines Register</em> wrote a featured article on the changing population base in the Midwest based on new Census data. Below is the graph from the article:
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/bilde.jpg"><img class="aligncenter size-full wp-image-1350" title="bilde" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/bilde.jpg" alt="" width="447" height="600" /></a>
+<a href="/images/bilde.jpg"><img class="aligncenter size-full wp-image-1350" title="bilde" src="/images/bilde.jpg" alt="" width="447" height="600" /></a>
 
 The lower-left graphic--dependence on manufacturing jobs--is one of the first items I mention to folks when discussing Iowa's economy. Rural areas rely more on manufacturing than agriculture as a percentage of employment and as a percentage of income after the 1982 recession--most assume it's agriculture. The <a href="http://midwest.chicagofedblogs.org/archives/2011/11/nonmetropolitan.html">Federal Reserve Bank of Chicago</a> noted the greater reliance of non-metro areas on manufacturing in the past decades. In the graph below, the orange areas represent counties which the share of manufacturing income is greater than the statewide average. The white areas are metropolitan areas. In 2009, two-thirds of non-metro counties are highlighted in orange.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/manufacturing-share-2009_2.png"><img class="aligncenter size-full wp-image-1352" title="Manufacturing Share 2009_2" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/manufacturing-share-2009_2.png" alt="" width="600" height="533" /></a>
+<a href="/images/manufacturing-share-2009_2.png"><img class="aligncenter size-full wp-image-1352" title="Manufacturing Share 2009_2" src="/images/manufacturing-share-2009_2.png" alt="" width="600" height="533" /></a>
 
 <!--more-->
 
@@ -39,6 +39,6 @@ Scholars have noted the decline in rural Midwestern states. Often, they point to
 
 Iowa has had increasing reliance on food manufacturing for employment. A <a href="http://midwest.chicagofedblogs.org/archives/2011/11/nonmetropolitan.html">graph</a> from the aforementioned Federal Reserve Bank of Chicago shows the increase in Iowa in relation to neighboring states:
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/7nmpx.png"><img class="aligncenter size-full wp-image-1351" title="7nmpx" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/7nmpx.png" alt="" width="600" height="400" /></a>
+<a href="/images/7nmpx.png"><img class="aligncenter size-full wp-image-1351" title="7nmpx" src="/images/7nmpx.png" alt="" width="600" height="400" /></a>
 
 The rise of manufacturing is notable, but it is a mistake to separate it from Iowa's agriculture. Fortunately, it means rural Iowa is not just waiting to be outsourced, but it doesn't guarantee economic growth either. Notable books and articles have touched on the "death" of the rural Midwest--search for any book with "Middle" in its title--which is mostly tied to the shift "away" from agriculture and large migration outflow.

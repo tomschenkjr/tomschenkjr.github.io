@@ -33,32 +33,32 @@ Pop quiz, you need to compare your local college's graduation rate to the nation
 <p style="padding-left:30px;">Start with a bar plot, there should be at least two bars.</p>
 
 
-[caption id="attachment_1319" align="aligncenter" width="600" caption="Basic two column chart"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart.png"><img class="size-full wp-image-1319" title="two-column-chart" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart.png" alt="" width="600" height="314" /></a>[/caption]
+[caption id="attachment_1319" align="aligncenter" width="600" caption="Basic two column chart"]<a href="/images/two-column-chart.png"><img class="size-full wp-image-1319" title="two-column-chart" src="/images/two-column-chart.png" alt="" width="600" height="314" /></a>[/caption]
 <p style="padding-left:30px;">Right click on the bar you want to be the "bullet"--the slender bar "inside" the larger bar. Right click on that data series and choose "Format Data Series..."</p>
 
 
-[caption id="attachment_1320" align="aligncenter" width="600" caption="Choose the series you want to be on top of the other bar."]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-format-data.png"><img class="size-full wp-image-1320" title="two-column-chart-format-data" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-format-data.png" alt="" width="600" height="314" /></a>[/caption]
+[caption id="attachment_1320" align="aligncenter" width="600" caption="Choose the series you want to be on top of the other bar."]<a href="/images/two-column-chart-format-data.png"><img class="size-full wp-image-1320" title="two-column-chart-format-data" src="/images/two-column-chart-format-data.png" alt="" width="600" height="314" /></a>[/caption]
 <p style="padding-left:30px;">Choose to plot the data on the "Secondary Axis". A secondary axis will appear, right click on the secondary or primary axis to adjust the scales. The minimum, maximums, and major unit need to be the <em>same</em>.</p>
 
 
-[caption id="attachment_1321" align="aligncenter" width="600" caption="Make sure the secondary axis and the primary axis have the same range."]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-secondary-axis.png"><img class="size-full wp-image-1321" title="two-column-chart-secondary-axis" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-secondary-axis.png" alt="" width="600" height="516" /></a>[/caption]
+[caption id="attachment_1321" align="aligncenter" width="600" caption="Make sure the secondary axis and the primary axis have the same range."]<a href="/images/two-column-chart-secondary-axis.png"><img class="size-full wp-image-1321" title="two-column-chart-secondary-axis" src="/images/two-column-chart-secondary-axis.png" alt="" width="600" height="516" /></a>[/caption]
 <p style="padding-left:30px;">Right-click on the bars, use the slider to adjust the gap to make wider or narrower. Here, I have made the green bar wider.</p>
 
 
-[caption id="attachment_1322" align="aligncenter" width="600" caption="You may need to make the bullet smaller first."]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-gap.png"><img class="size-full wp-image-1322" title="two-column-chart-gap" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-gap.png" alt="" width="600" height="482" /></a>[/caption]
+[caption id="attachment_1322" align="aligncenter" width="600" caption="You may need to make the bullet smaller first."]<a href="/images/two-column-chart-gap.png"><img class="size-full wp-image-1322" title="two-column-chart-gap" src="/images/two-column-chart-gap.png" alt="" width="600" height="482" /></a>[/caption]
 <p style="padding-left:30px;">Delete the secondary axis, but ensure the minimum and maximum values are the exact same.</p>
 
 
-[caption id="attachment_1323" align="aligncenter" width="600" caption="Don&#039;t screw up, it&#039;s almost over."]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-secondary-axis-delete.png"><img class="size-full wp-image-1323" title="two-column-chart-secondary-axis-delete" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/two-column-chart-secondary-axis-delete.png" alt="" width="600" height="247" /></a>[/caption]
+[caption id="attachment_1323" align="aligncenter" width="600" caption="Don&#039;t screw up, it&#039;s almost over."]<a href="/images/two-column-chart-secondary-axis-delete.png"><img class="size-full wp-image-1323" title="two-column-chart-secondary-axis-delete" src="/images/two-column-chart-secondary-axis-delete.png" alt="" width="600" height="247" /></a>[/caption]
 <p style="padding-left:30px;">Add any labels, change colors, fix fonts to taste.</p>
 
 
-[caption id="attachment_1324" align="aligncenter" width="600" caption="Voila!"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/finished-bullet-chart.png"><img class="size-full wp-image-1324" title="finished-bullet-chart" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/finished-bullet-chart.png" alt="" width="600" height="314" /></a>[/caption]
+[caption id="attachment_1324" align="aligncenter" width="600" caption="Voila!"]<a href="/images/finished-bullet-chart.png"><img class="size-full wp-image-1324" title="finished-bullet-chart" src="/images/finished-bullet-chart.png" alt="" width="600" height="314" /></a>[/caption]
 <h2><strong>Bubble Plot
 </strong></h2>
 Bubble plots have increased in popularity, but are often mis-applied. The idea is to show bubbles--or circles-<strong>-</strong>relative in size.
 
-[caption id="attachment_918" align="aligncenter" width="600" caption="Bubbles!"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/bubble-studentsuccess.png"><img class="size-full wp-image-918" title="Bubble-StudentSuccess" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/bubble-studentsuccess.png" alt="" width="600" height="762" /></a>[/caption]
+[caption id="attachment_918" align="aligncenter" width="600" caption="Bubbles!"]<a href="/images/bubble-studentsuccess.png"><img class="size-full wp-image-918" title="Bubble-StudentSuccess" src="/images/bubble-studentsuccess.png" alt="" width="600" height="762" /></a>[/caption]
 
 Bubbles with a larger area, naturally, means more. But it's easy to misapply these types of charts. Remember the formula for area of a circle is Area = π * r<sup>2</sup>. If you want a circle that is 20 percent bigger, it's important not to only increase the diameter by 20 percent, but the <em>area</em>. You can use the formula Area /π = diameter.
 <p style="padding-left:30px;"><em>Example 001:
@@ -71,7 +71,7 @@ Bubble plots also succumb to a similar problem as pie charts. It can be difficul
 <h2><strong>Ladder Plot</strong></h2>
 Another Tufte invention, and one of my absolute favorites. Suppose you need to track the change in average college tuition between five states for the past five years. Typically, one jumps to the line chart: one line for each state with five data points for each year. We all have done this and we all seem to ignore the graph looks messy. Dig deeper and you realize that people only care about two things: are we higher than five years ago and where do we rank--people <em>always</em> ask the latter. A ladder plot shows exactly that, and it is much cleaner. It is essentially a line plot, but the variation between has been eliminated and both sides are labeled.
 
-[caption id="attachment_857" align="aligncenter" width="600" caption="The data that really matters"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/tufte-ladder-tuition.png"><img class="size-full wp-image-857" title="Tufte Ladder Plot" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/tufte-ladder-tuition.png" alt="Ladder Plot" width="600" height="442" /></a>[/caption]
+[caption id="attachment_857" align="aligncenter" width="600" caption="The data that really matters"]<a href="/images/tufte-ladder-tuition.png"><img class="size-full wp-image-857" title="Tufte Ladder Plot" src="/images/tufte-ladder-tuition.png" alt="Ladder Plot" width="600" height="442" /></a>[/caption]
 
 This graph can be difficult to create. There are several options, the first is a <a href="http://www.juiceanalytics.com/writing/tufte-style-comparison-chart-generator/">program</a>--not Excel--that can create these charts. But this program provides little user control (unless you know <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29">Python</a>). An <a href="http://www.juiceanalytics.com/writing/tufte-style-comparison-chart-generator/">Excel template</a> is also available. The above chart was created using the Excel template provided by Juice Analytics.
 
@@ -86,7 +86,7 @@ His use of typography and simple words is quite interesting. Readers usually ant
 Below is an image of the implementation of typographical data boxes in the Iowa Department of Education's <em>Annual Condition of Iowa's Community Colleges</em>:
 <div class="mceTemp mceIEcenter" style="text-align:left;">
 
-[caption id="attachment_873" align="aligncenter" width="346" caption="Mix words and numbers to give a quick view"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/typography-condition2.png"><img class="size-full wp-image-873" title="Typography-Condition" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/11/typography-condition2.png" alt="" width="346" height="186" /></a>[/caption]
+[caption id="attachment_873" align="aligncenter" width="346" caption="Mix words and numbers to give a quick view"]<a href="/images/typography-condition2.png"><img class="size-full wp-image-873" title="Typography-Condition" src="/images/typography-condition2.png" alt="" width="346" height="186" /></a>[/caption]
 
 The beauty of this graph is usually derived from the font. Not everything on your computer is Times New Roman or Arial. Times New Roman is fine, but boring. Arial is a bit ugly, users should opt for Helvetica instead. I won't delve into the font fetish in detail, but I recommend reading <a href="http://www.typographyforlawyers.com/?p=587">Typography for Lawyers</a>. It describes good fonts for use in a professional setting. Usually these fonts cost money, so I also recommend browsing <a href="http://www.theleagueofmoveabletype.com/">The League of Moveable Type</a> for free fonts, especially <a href="http://www.theleagueofmoveabletype.com/fonts/8-goudy-bookletter-1911">Goudy Bookletter</a>.
 
@@ -95,7 +95,7 @@ The beauty of this graph is usually derived from the font. Not everything on you
 
 Bar and line graphs can quickly become overwhelmed and cluttered. When showing  more than 5 categories of data, and especially for any graph with more than 7, you should facet your graph. Faceting can also be called multiples or n-tuple graphs. Technically, faceting is a technique more than a graph.
 
-[caption id="attachment_622" align="aligncenter" width="600" caption="Faceted by major"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/wages-by-cluster.png"><img class="size-full wp-image-622" title="Wages by Cluster" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/wages-by-cluster.png" alt="Wages by Cluster" width="600" height="799" /></a>[/caption]
+[caption id="attachment_622" align="aligncenter" width="600" caption="Faceted by major"]<a href="/images/wages-by-cluster.png"><img class="size-full wp-image-622" title="Wages by Cluster" src="/images/wages-by-cluster.png" alt="Wages by Cluster" width="600" height="799" /></a>[/caption]
 
 This is an extremely manual process, unless you use <a href="http://had.co.nz/ggplot2/">ggplot2</a> in the <a href="http://www.r-project.org/">R</a> statistical program. It requires the author to make each individual graph and to thread them together using, in Excel, the "group" command. You'll need to keep a few rules in mind:
 <ol>

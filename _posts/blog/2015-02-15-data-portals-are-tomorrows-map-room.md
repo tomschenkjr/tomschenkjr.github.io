@@ -15,7 +15,7 @@ tags:
 ---
 I've often found myself exploring a library's map room or thumbing through old Census records while taking study breaks. I was often surprised how I could become engrossed with old data. Some of the fascination comes from a historical narrative of history from the perspective of that generations point-of-view, even if it was based on faulty logic or data that would be later crystalized. With the advent of open data, digital maps, and databases, how will we be able to explore historical data in the future; that is, how can we look at today's data over the next 20 years?
 
-[caption id="attachment_1993" align="aligncenter" width="640"]<img class="wp-image-1993 size-large" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/02/books-164530_1280-1024x613.jpg" alt="Old Books" width="640" height="383" /> They lack machine-readability, but they do have longevity[/caption]
+[caption id="attachment_1993" align="aligncenter" width="640"]<img class="wp-image-1993 size-large" src="/images/books-164530_1280-1024x613.jpg" alt="Old Books" width="640" height="383" /> They lack machine-readability, but they do have longevity[/caption]
 
 The paradox is paper documents are not easily accessible and shunned by the open data community, but paper has proven to be one of the most accessible formats across generations while digital formats are frequently deprecated and takes a higher level of expertise to open. As a result, today's open data portals provide up-to-date, machine-readable data, but how will this impact the next generation who wants to read the same data?
 
@@ -25,7 +25,7 @@ Maintaining historical data is one thing, but we need to be mindful of providing
 
 Chicago's open data team has identified this concern as well, beginning to take some limited measures to counteract these problems. Most notably, we instituted some limited version control of maps. New maps aren't overwritten, but deprecated. Take, for example, uploads of the city's Street Center Line data that shows the location of all Chicago's roads. Deprecated files allow those interested in older data to see how Chicago's roads have grown and changed over the years.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/02/Screen-Shot-2015-02-15-at-11.00.38-PM.png"><img class="aligncenter size-full wp-image-1992" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/02/Screen-Shot-2015-02-15-at-11.00.38-PM.png" alt="Deprecating Street Center Line data" width="629" height="270" /></a>
+<a href="/images/Screen-Shot-2015-02-15-at-11.00.38-PM.png"><img class="aligncenter size-full wp-image-1992" src="/images/Screen-Shot-2015-02-15-at-11.00.38-PM.png" alt="Deprecating Street Center Line data" width="629" height="270" /></a>
 
 Yet, this isn't a tenable solution. This process works on a limited basis, but would not work on data that changes frequently.
 

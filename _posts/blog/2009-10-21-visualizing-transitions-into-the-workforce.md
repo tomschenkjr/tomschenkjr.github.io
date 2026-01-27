@@ -17,7 +17,7 @@ tags:
   - labor economics
   - preview
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-copy1.pdf"><img class="aligncenter size-full wp-image-246" title="Visualizing Transitions Poster Preview" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-preview.png" alt="Visualizing Transitions Poster Preview" width="600" height="277" /></a>
+<a href="/images/visualizing-transitions-poster-copy1.pdf"><img class="aligncenter size-full wp-image-246" title="Visualizing Transitions Poster Preview" src="/images/visualizing-transitions-poster-preview.png" alt="Visualizing Transitions Poster Preview" width="600" height="277" /></a>
 
 Today the Iowa Department of Education and Iowa Workforce Development released "Visualizing Transitions into the Workforce" poster. In short, DE and IWD partnered to follow students from Iowa community colleges into the workforce. The poster shows how specific majors lead to employment in various sectors in Iowa's economy. The findings are discussed in the full poster.
 

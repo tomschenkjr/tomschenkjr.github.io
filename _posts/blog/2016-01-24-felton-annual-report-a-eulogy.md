@@ -15,7 +15,7 @@ tags:
   - Nicholas Felton
 ---
 I received the last Annual Report by <a href="http://feltron.com/">Nicholas Felton</a>. It is his 10th report in a series that began with a <a href="http://feltron.com/FAR05.html">thin volume in 2005</a>. I hesitate to say that I've "finally" received the report because I was not anticipating the conclusion of the series in any way. Instead, I had always looked forward to these reports, buying several copies of the sturdy, well-crafted, lithographed paper.
-<p style="text-align: center;"><a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2016/01/feltron_report_collection.png"><img class="aligncenter size-medium wp-image-2830" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2016/01/feltron_report_collection-193x300.png" alt="feltron_report_collection" width="193" height="300" /></a></p>
+<p style="text-align: center;"><a href="/images/feltron_report_collection.png"><img class="aligncenter size-medium wp-image-2830" src="/images/feltron_report_collection-193x300.png" alt="feltron_report_collection" width="193" height="300" /></a></p>
 His annual reports were quite important in my venture into data visualization. While at the Iowa Department of Education, I had the daunting task of implementing a higher pedigree of research while also explaining it to legislators, lobbyists, educators, my boss, etc. It is one thing to move quickly with data, it becomes more complicated when you everyone else must keep pace. At this point, data visualization became a serious tool to overcome this barrier.
 
 The influence from Felton's reports was rather cynical. Frankly, his reports were banal trivia about his personal life that ranged from his favorite beer to his repetitive habits. But, the reports were engaging and were incredibly interesting to peruse. It's quite remarkable to draw in thousands of readers about someone's life, which leads to the simple observation that I expressed to colleagues:
@@ -24,7 +24,7 @@ Felton's execution of the report brought the readers to attention, despite the r
 
 Below, a comparison of two reports: <em>The Condition of Iowa Community Colleges 2006</em> and <em>The Condition of Iowa Community Colleges 2008</em>. The latter report was significantly overhauled by my team under my art direction. It incorporated several "Felton-esque" approaches: word-based infographics, call-out fonts, and a "graphs first, no tables" approach.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/11/comparing_condition_report_pages.png"><img class="aligncenter size-full wp-image-2714" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/11/comparing_condition_report_pages.png" alt="comparing_condition_report_pages" width="700" height="397" /></a>
+<a href="/images/comparing_condition_report_pages.png"><img class="aligncenter size-full wp-image-2714" src="/images/comparing_condition_report_pages.png" alt="comparing_condition_report_pages" width="700" height="397" /></a>
 
 The bullet points on the older report were replaced with large numbers, arrows, and subtle captions in 2008. Likewise, the tables in the 2006 report buried the trends that many people were looking for. On the right, you can see the direction of enrollment and whether it is steady or sharply changing.
 

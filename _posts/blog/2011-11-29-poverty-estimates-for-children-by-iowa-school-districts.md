@@ -23,6 +23,6 @@ tags:
 ---
 U.S. Census Bureau<a href="http://www.census.gov/did/www/saipe/data/maps/index.html"> released poverty and income estimates</a> for small areas, including counties and school districts, in an interactive map. Here is a picture of poverty estimates for children (between 5 and 17 years-old) by Iowa school district.
 
-<a href="http://www.census.gov/did/www/saipe/data/maps/index.html"><img class="aligncenter size-full wp-image-1357" title="census-poverty-schooldistrict-2010" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/11/census-poverty-schooldistrict-2010.png" alt="" width="598" height="391" /></a>
+<a href="http://www.census.gov/did/www/saipe/data/maps/index.html"><img class="aligncenter size-full wp-image-1357" title="census-poverty-schooldistrict-2010" src="/images/census-poverty-schooldistrict-2010.png" alt="" width="598" height="391" /></a>
 
 Darker areas represent a higher proportion of kids in poverty. Pockets of high poverty, 30%+, are predominately in southern Iowa. Not surprisingly, <a href="http://tomschenkjr.net/2011/05/18/educational-attainment-of-adults-over-25-in-iowa/">educational attainment</a> for adults in these same school districts also tend to be lower.

@@ -23,4 +23,4 @@ tags:
 ---
 Firefox 4's implementation is neat, 3.x was bland.
 
-<img class="aligncenter size-full wp-image-1185" title="Zotero Tab" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/05/zotero-tab.png" alt="" width="275" height="83" />
+<img class="aligncenter size-full wp-image-1185" title="Zotero Tab" src="/images/zotero-tab.png" alt="" width="275" height="83" />

@@ -19,4 +19,4 @@ tags:
   - handbook for institutional research
   - research
 ---
-My chapter for the <em>Handbook for Institutional Research</em>, "Workforce and Technical Skill Education and Its Assessment" has been substantially updated. The new draft is available <a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/02/workforce-and-technical-skill-education-and-its-assessment-2011-02-06.pdf">here</a>. The book is expected to be published this summer.
+My chapter for the <em>Handbook for Institutional Research</em>, "Workforce and Technical Skill Education and Its Assessment" has been substantially updated. The new draft is available <a href="/images/workforce-and-technical-skill-education-and-its-assessment-2011-02-06.pdf">here</a>. The book is expected to be published this summer.

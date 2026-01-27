@@ -22,7 +22,7 @@ tags:
   - revenue estimating conference
   - tax revenues
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/12/rec-net-revenue-2003-2012.jpg"><img class="aligncenter size-full wp-image-945" title="REC Net Revenue - 2003-2012" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/12/rec-net-revenue-2003-2012.jpg" alt="" width="600" height="463" /></a>
+<a href="/images/rec-net-revenue-2003-2012.jpg"><img class="aligncenter size-full wp-image-945" title="REC Net Revenue - 2003-2012" src="/images/rec-net-revenue-2003-2012.jpg" alt="" width="600" height="463" /></a>
 
 As expected, the Iowa Revenue Estimating Conference are <a href="http://www.dom.state.ia.us/state/REC/rec_quarterly.html">estimating</a> <em>higher</em> state tax revenues for the current and next year than previously thought.
 

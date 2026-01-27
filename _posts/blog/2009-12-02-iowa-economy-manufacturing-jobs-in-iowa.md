@@ -16,4 +16,4 @@ tags:
   - recession
   - unemployment
 ---
-<a href="http://www.desmoinesregister.com/article/20091108/BUSINESS/911080344/Factory-losses-strike-deepest-in-rural-Iowa"><img class="aligncenter size-full wp-image-400" title="bilde" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/bilde.jpeg" alt="" width="547" height="600" /></a>Here mostly as a reminder. Source: <a href="http://www.desmoinesregister.com/article/20091108/BUSINESS/911080344/Factory-losses-strike-deepest-in-rural-Iowa">Des Moines Register</a>.
+<a href="http://www.desmoinesregister.com/article/20091108/BUSINESS/911080344/Factory-losses-strike-deepest-in-rural-Iowa"><img class="aligncenter size-full wp-image-400" title="bilde" src="/images/bilde.jpeg" alt="" width="547" height="600" /></a>Here mostly as a reminder. Source: <a href="http://www.desmoinesregister.com/article/20091108/BUSINESS/911080344/Factory-losses-strike-deepest-in-rural-Iowa">Des Moines Register</a>.

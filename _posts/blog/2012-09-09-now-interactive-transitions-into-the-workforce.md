@@ -17,7 +17,7 @@ tags:
   - education
   - research
 ---
-<a href="http://tomschenkjr.net/workforcetransitions/"><img class="alignleft size-full wp-image-1608" title="Visualizing Transitions Interactive" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/07/Interactive-Transitions-Preview.png" alt="Visualizing Transitions into the Workforce" width="600" height="278" /></a>
+<a href="http://tomschenkjr.net/workforcetransitions/"><img class="alignleft size-full wp-image-1608" title="Visualizing Transitions Interactive" src="/images/Interactive-Transitions-Preview.png" alt="Visualizing Transitions into the Workforce" width="600" height="278" /></a>
 
 How does a community college major relate to the eventual industry of employment? Now you can interact and explore the relationship between Iowa community college students and their eventual employment sector or your computer or mobile device. This is an update to a static poster I developed a couple of years ago.
 
@@ -26,7 +26,7 @@ There is good reason to explore data like this, both in Iowa and nationally. Ed
 
 <h3>From Static to Interactive</h3>
 
-Several years ago I, with my co-author Kiyo, designed a <a title="[PDF]: Visualizing Transitions into the Workforce" href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-copy1.pdf">poster</a> using <a title="Introduction to Circos" href="http://circos.ca/">Circos</a> to display the relationship between major and sector. The diagram, compared to a table, was more engaging than a table that consists of 17 rows and 20 columns. The left side of the diagram showed the major--the length of each bar denoting the number of students. The right side shows the industry of employment, again, the length of the bar denoting the number of students hired in each sector. The ribbons denote the number of students transitioning from majors to industries.
+Several years ago I, with my co-author Kiyo, designed a <a title="[PDF]: Visualizing Transitions into the Workforce" href="/images/visualizing-transitions-poster-copy1.pdf">poster</a> using <a title="Introduction to Circos" href="http://circos.ca/">Circos</a> to display the relationship between major and sector. The diagram, compared to a table, was more engaging than a table that consists of 17 rows and 20 columns. The left side of the diagram showed the major--the length of each bar denoting the number of students. The right side shows the industry of employment, again, the length of the bar denoting the number of students hired in each sector. The ribbons denote the number of students transitioning from majors to industries.
 
 Most readers noted the proportion of students in each major going into specific sectors--such as a plurality of health sciences majors working in the health care sector. But another perspective shows the perspective from the employer--that most of those hired by the health care sector are not from health sciences. In some sense, it showed the demand and supply side.
 
@@ -38,7 +38,7 @@ It was necessary to create an interactive website, first by trying to replicate 
 
 Even when we designed the original poster, we realized the difficulty reading the central diagram. We used small multiples to show each major.
 
-[caption id="attachment_1607" align="alignleft" width="600"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/09/Career-Cluster-Transitions-A-Simpler-View.png"><img class="size-full wp-image-1607" title="Career Cluster Transitions: A Simpler View" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/09/Career-Cluster-Transitions-A-Simpler-View.png" alt="" width="600" height="369" /></a> Original poster design (left) and new drop-down menu (right)[/caption]
+[caption id="attachment_1607" align="alignleft" width="600"]<a href="/images/Career-Cluster-Transitions-A-Simpler-View.png"><img class="size-full wp-image-1607" title="Career Cluster Transitions: A Simpler View" src="/images/Career-Cluster-Transitions-A-Simpler-View.png" alt="" width="600" height="369" /></a> Original poster design (left) and new drop-down menu (right)[/caption]
 
 Now with the interactivity, this is moot. Instead, users can choose a major from the drop-down list to see detailed information about each major. Unlike before, a reader can also see precise numbers on the number of students and their top sectors.
 

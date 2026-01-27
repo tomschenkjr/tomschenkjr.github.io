@@ -30,11 +30,11 @@ Even though recessions are becoming less frequent (e.g., great moderation), stat
 <blockquote>In 2009, the median error among states was an overestimate of 10.2 percent. That equated to an unexpected revenue shortfall of nearly $50 billion in person income, corporate income and sales tax revenues. In a year when state policy makers faced $63 billion in midyear budget gaps--coming atop $47 billion they had already closed when crafting their budgets--this misestimate posed a significant challenge.</blockquote>
 The similar pattern between Iowa and the nation is remarkable. Here is a<a href="http://tomschenkjr.net/2010/12/06/iowa-projecte-revenues-up-again/"> recent graph</a> that shows the relationship between Iowa revenue estimates and actual revenues for December:
 
-[caption id="attachment_459" align="aligncenter" width="600"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-generalfund-03-111.png"><img class="size-full wp-image-459" title="REC-generalfund-03-11" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-generalfund-03-111.png" alt="" width="600" height="438" /></a> State net revenue in millions[/caption]
+[caption id="attachment_459" align="aligncenter" width="600"]<a href="/images/rec-generalfund-03-111.png"><img class="size-full wp-image-459" title="REC-generalfund-03-11" src="/images/rec-generalfund-03-111.png" alt="" width="600" height="438" /></a> State net revenue in millions[/caption]
 
 Project and actual are the same curves, but project is a bit lagged. A similar graph for all states shows a similar pattern:
 
-[caption id="attachment_1082" align="aligncenter" width="600"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/03/pew-staterevenueproj.png"><img class="size-full wp-image-1082" title="Pew-StateRevenueProj" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/03/pew-staterevenueproj.png" alt="" width="600" height="345" /></a> Pew Center on the States/Nelson A. Rockefeller Institute for Government, Cracks in the Crystal Ball, Exhibit 4[/caption]
+[caption id="attachment_1082" align="aligncenter" width="600"]<a href="/images/pew-staterevenueproj.png"><img class="size-full wp-image-1082" title="Pew-StateRevenueProj" src="/images/pew-staterevenueproj.png" alt="" width="600" height="345" /></a> Pew Center on the States/Nelson A. Rockefeller Institute for Government, Cracks in the Crystal Ball, Exhibit 4[/caption]
 
 Again, revenues are overestimated at the beginning of a recession, underestimated during recoveries.
 

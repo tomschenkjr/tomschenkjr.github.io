@@ -24,7 +24,7 @@ The first two follow a different work path. For the last item, there is a great 
 
 Visit the website to enter a URL,  which scans all the websites (the entire domain) and subdomains for the applicable file types. You can browse the results to see if there are any files currently posted that can be posted on the portal. Below, a scan of <em>www.cityofchicago.org</em> shows some results. After further inspection, many of these files are "forms" in Excel and not a good fit for the open data portal. However, there are some promising leads for our team.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/08/Screen-Shot-2015-08-24-at-7.16.00-AM.png"><img class="aligncenter size-large wp-image-2373" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2015/08/Screen-Shot-2015-08-24-at-7.16.00-AM-1024x615.png" alt="lmgtdfy" width="640" height="384" /></a>
+<a href="/images/Screen-Shot-2015-08-24-at-7.16.00-AM.png"><img class="aligncenter size-large wp-image-2373" src="/images/Screen-Shot-2015-08-24-at-7.16.00-AM-1024x615.png" alt="lmgtdfy" width="640" height="384" /></a>
 
 This also a useful on-going strategy for mature data portals. Sometimes, data gets posted to a website without talking to the open data portal team. <em>C'est la vie</em>. Check this quarterly to try to capture any of these "mistakes".
 

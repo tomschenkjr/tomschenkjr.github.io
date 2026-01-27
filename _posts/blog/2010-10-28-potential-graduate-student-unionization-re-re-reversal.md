@@ -29,4 +29,4 @@ It's not surprising to see the issue come up again for reversal. After a lengthy
 
 <em>NYU II </em>will be interesting to watch. I anticipate that NYU graduate students will prevail in winning recognition, but the question will be if the ruling will be narrowly tailored to NYU's situtation, or if it will have broader impact on the numerous union drives at private universities.
 
-Here is my <a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/07/eegsu.pdf">paper</a> on the topic of graduate-student unionization.
+Here is my <a href="/images/eegsu.pdf">paper</a> on the topic of graduate-student unionization.

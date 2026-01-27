@@ -18,7 +18,7 @@ tags:
 ---
 I've actually shown this graph before at a State Board of Education meeting last year. I don't think it was received as well as I had hoped. Many people were worried about the "complexity" of the diagram and I did hear some murmuring when I flipped to the slide. Below is the image of the graph and a fuller explanation is below the fold:
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/cc-funding-scatter.png"><img class="aligncenter size-full wp-image-474" title="Share of Funding for Iowa Community Colleges: 1967-2008" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/cc-funding-scatter.png" alt="" width="600" height="480" /></a><!--more-->
+<a href="/images/cc-funding-scatter.png"><img class="aligncenter size-full wp-image-474" title="Share of Funding for Iowa Community Colleges: 1967-2008" src="/images/cc-funding-scatter.png" alt="" width="600" height="480" /></a><!--more-->
 
 The lightest points represent the late 60s and 70s and progressively become darker until the 2000s (black) and eventually 2008 is shown in red. This chart is an <a href="http://www.juiceanalytics.com/writing/tufte-charts-in-excel/">implementation</a> of a Tufte scatter plot in Excel. The negative trend shows the share of community college funding is becoming more reliant on tuition and fees and away from state general aid--the remaining is federal, local, and other funding.
 

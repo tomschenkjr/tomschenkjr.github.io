@@ -18,7 +18,7 @@ I’ve been researching graduate-student unionization for five years. Below are 
 
 ### Working Papers
 
-* [The Effects of Graduate-Student Unionization on Stipends](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/07/egsus-rhe.pdf "The Effects of Graduate-Student Unionization on Stipends") (2012.5.01, forthcoming, _The Review of Higher_ _Education_)
+* [The Effects of Graduate-Student Unionization on Stipends](/images/egsus-rhe.pdf "The Effects of Graduate-Student Unionization on Stipends") (2012.5.01, forthcoming, _The Review of Higher_ _Education_)
 
 ### Data Set
 

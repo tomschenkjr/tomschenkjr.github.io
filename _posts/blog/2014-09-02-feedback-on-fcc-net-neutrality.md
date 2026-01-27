@@ -16,6 +16,6 @@ tags:
   - sunlight foundation
 format: link
 ---
-<a href="http://datanouveau.net/post/96517167542/suppose-you-want-feedback-on-an-idea-so-you-offer"><img class="alignnone size-full wp-image-1740" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2014/09/datanouveau-sunlight_word-bubble_avaaz.png" alt="datanouveau-sunlight_word-bubble_avaaz" width="908" height="742" /></a>
+<a href="http://datanouveau.net/post/96517167542/suppose-you-want-feedback-on-an-idea-so-you-offer"><img class="alignnone size-full wp-image-1740" src="/images/datanouveau-sunlight_word-bubble_avaaz.png" alt="datanouveau-sunlight_word-bubble_avaaz" width="908" height="742" /></a>
 
 Over at <a href="http://datanouveau.net/post/96517167542/suppose-you-want-feedback-on-an-idea-so-you-offer">Data Nouveau</a>, a highlight of the Sunlight Foundation's recent analysis and visualization of feedback on over 800,000 comments on the proposed net neutrality rules.

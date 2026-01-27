@@ -14,4 +14,4 @@ tags:
   - economics of education
   - iowa
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/wages-by-cluster.png"><img class="aligncenter size-full wp-image-622" title="Wages by Cluster" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/wages-by-cluster.png" alt="Wages by Cluster" width="600" height="799" /></a>
+<a href="/images/wages-by-cluster.png"><img class="aligncenter size-full wp-image-622" title="Wages by Cluster" src="/images/wages-by-cluster.png" alt="Wages by Cluster" width="600" height="799" /></a>

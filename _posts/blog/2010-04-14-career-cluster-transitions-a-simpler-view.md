@@ -14,4 +14,4 @@ tags:
   - economics of education
   - iowa
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/transitions-by-cluster.png"><img class="aligncenter size-full wp-image-627" title="Transitions by Cluster" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/04/transitions-by-cluster.png" alt="" width="600" height="947" /></a>An excerpt from the <a href="http://tomschenkjr.net/research/visualizing-transitions-from-education-to-industries/">larger poster</a>.
+<a href="/images/transitions-by-cluster.png"><img class="aligncenter size-full wp-image-627" title="Transitions by Cluster" src="/images/transitions-by-cluster.png" alt="" width="600" height="947" /></a>An excerpt from the <a href="http://tomschenkjr.net/research/visualizing-transitions-from-education-to-industries/">larger poster</a>.

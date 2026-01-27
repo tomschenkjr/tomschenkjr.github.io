@@ -23,4 +23,4 @@ tags:
 ---
 A new project is going to send me into map-making mode for awhile, here is the first bit (click for full size):
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/05/educational-attainment-by-district-2005-2009.png"><img class="aligncenter size-full wp-image-1177" title="Educational Attainment by District 2005-2009" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/05/educational-attainment-by-district-2005-2009.png" alt="" width="600" height="778" /></a>
+<a href="/images/educational-attainment-by-district-2005-2009.png"><img class="aligncenter size-full wp-image-1177" title="Educational Attainment by District 2005-2009" src="/images/educational-attainment-by-district-2005-2009.png" alt="" width="600" height="778" /></a>

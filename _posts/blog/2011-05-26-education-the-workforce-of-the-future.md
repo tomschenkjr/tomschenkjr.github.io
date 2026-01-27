@@ -21,7 +21,7 @@ tags:
   - education attainment
   - higher education
 ---
-<a href="http://awesome.good.is/transparency/web/1105/educating-the-workforce/flash.html"><img class="aligncenter size-full wp-image-1190" title="futureworkforce" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/05/futureworkforce.png" alt="" width="600" height="259" /></a>
+<a href="http://awesome.good.is/transparency/web/1105/educating-the-workforce/flash.html"><img class="aligncenter size-full wp-image-1190" title="futureworkforce" src="/images/futureworkforce.png" alt="" width="600" height="259" /></a>
 
 GOOD Magazine has put together an <a href="http://awesome.good.is/transparency/web/1105/educating-the-workforce/flash.html">infographic on the education demands for next generation's workforce</a>. It's a very timely topic for me and always a good reminder for students. Unfortunately, students who need to know this the most often do not understand.
 

@@ -12,4 +12,4 @@ categories: teaching
 tags:
   - Statistics
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/11/anatomystddev.pdf"><img class="aligncenter size-full wp-image-309" title="AnatomyStdDevPreview" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/11/anatomystddevpreview.png" alt="" width="563" height="310" /></a>While reorganizing some old files I ran across this graphic I put together for a statistics 101 tutoring lab. Click the image above to get the full image [PDF] explaining how to calculate the standard deviation for a sample.
+<a href="/images/anatomystddev.pdf"><img class="aligncenter size-full wp-image-309" title="AnatomyStdDevPreview" src="/images/anatomystddevpreview.png" alt="" width="563" height="310" /></a>While reorganizing some old files I ran across this graphic I put together for a statistics 101 tutoring lab. Click the image above to get the full image [PDF] explaining how to calculate the standard deviation for a sample.

@@ -24,7 +24,7 @@ tags:
   - R
   - sublime text
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-in-sublime-text2.png"><img class="aligncenter size-full wp-image-1445" title="R in Sublime Text" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-in-sublime-text2.png" width="600" height="357" /></a>
+<a href="/images/r-in-sublime-text2.png"><img class="aligncenter size-full wp-image-1445" title="R in Sublime Text" alt="" src="/images/r-in-sublime-text2.png" width="600" height="357" /></a>
 
 My R interface has been pretty basic in the last few years. I have usually stuck to the R console. Yes, I've tried<a href="http://www.gnu.org/software/emacs/"> Emacs</a> with <a href="http://ess.r-project.org/">ESS</a>; a staple, but it is so unbearably antiquated that I always gave up on its significant learning curve. GUI packages--especially <a href="http://www.rstudio.org/">Rstudio</a>--offer viable alternatives, but I feel the GUI lets me lose focus of the code. I have been envious of TextMate for Mac, but alas, I'm not a Mac user. Recently, though, I've moved to <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. With some nudging, I have been able to mimic the typical R console environment in the more-powerful Sublime Text program.
 
@@ -44,18 +44,18 @@ This setup will let you
 <blockquote>I will presume some user knowledge here and will focus on the Windows user. Setup is very easy. Their website has<a title="Install Sublime Text 2" href="http://www.sublimetext.com/2"> links to executable autoinstallers</a>, you won't need to unzip and manual install nor are you depending on a third party to graciously compile code on your behalf.</blockquote>
 Follow the instructions and install using the default settings.
 <h2><strong>Take a look around</strong></h2>
-<p style="text-align: center;"><a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-script-syntax.png"><img title="R Script Syntax" alt="R Syntax" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-script-syntax.png" width="600" height="313" /></a></p>
+<p style="text-align: center;"><a href="/images/r-script-syntax.png"><img title="R Script Syntax" alt="R Syntax" src="/images/r-script-syntax.png" width="600" height="313" /></a></p>
 Before proceeding, take a look at the R interface. Similar to other programs (e.g., <a href="http://notepad-plus-plus.org/">Notepad++</a>), Sublime Text offers native syntax highlighting for R code. Load one of your codes or try a <a href="https://gist.github.com/2876877.">sample script</a>. If you don't see any highlighting, you can always tell Sublime Text by clicking <em>View  &gt; Syntax</em> and choosing <em>R</em>. Otherwise you can look in the lower right-hand corner as is shown in the image.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/choose-language.png"><img class="aligncenter size-full wp-image-1430" title="Choose Language" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/choose-language.png" width="194" height="152" /></a>
+<a href="/images/choose-language.png"><img class="aligncenter size-full wp-image-1430" title="Choose Language" alt="" src="/images/choose-language.png" width="194" height="152" /></a>
 
 A nifty feature is autocompleting parenthesis and other special characters. Type "<em>write.csv(</em>" and it'll auto-insert the right paren "<em>)</em>". Little underlines help you match each left parenthesis with the right parenthesis. It also works with "{", "[", single, and double quotation marks.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/tracking-parenthesis.png"><img class="aligncenter size-full wp-image-1441" title="Tracking Parenthesis" alt="Parenthesis and brackets are autoinserted" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/tracking-parenthesis.png" width="600" height="121" /></a>
+<a href="/images/tracking-parenthesis.png"><img class="aligncenter size-full wp-image-1441" title="Tracking Parenthesis" alt="Parenthesis and brackets are autoinserted" src="/images/tracking-parenthesis.png" width="600" height="121" /></a>
 
 Comments have a lighter tone. So does the ubiquitous "&lt;-". Functions and special characters also have highlighting. If you don't like the color scheme, you can change it under Preferences &gt; Color Scheme. The default is Monokai, Twilight is a very dark theme while iPlastic is a very white theme.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/autocomplete-variables.png"><img class="aligncenter size-full wp-image-1442" title="Autocomplete Variables" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/autocomplete-variables.png" width="600" height="138" /></a>
+<a href="/images/autocomplete-variables.png"><img class="aligncenter size-full wp-image-1442" title="Autocomplete Variables" alt="" src="/images/autocomplete-variables.png" width="600" height="138" /></a>
 
 Once you type a variable or function names, you can easily reference it later for autocompletion. Load the data into a variable called "sampleData" and you only need to type "sa" and hit tab to complete the name. If there are multiple possible matches, then you can use arrow keys to choose. The limitation of this, however, is that Sublime Text treats "sample.data" as two separate names. To counter this, I've started to use underscores, which is friendlier. Also, Sublime Text is using a simple approach--it simply refers to what you've typed before, it is not remembering variables in your memory the same way the GUI interfaces do.
 <blockquote>Click on Preferences &gt; Key Bindings - User, then copy and paste the following (thanks G-Force!)</blockquote>
@@ -66,7 +66,7 @@ At this point, however, you can't execute or "compile" code. It's just pretty fo
 <h2><strong>Package Manager</strong></h2>
 Our next goal is to be able use the R console and do calculations within Sublime Text. We're going to use<em> </em>the <em>SublimeREPL</em> package to accomplish this. Don't worry, this isn't a rarefied thing that will clutter your RAM just for R; you'll probably use this package for other things too.
 <blockquote>Visit the<a href="http://wbond.net/sublime_packages/package_control"> Sublime Package Control website</a> and follow the instructions to install the package manager on your computer.</blockquote>
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/install-packages.png"><img class="aligncenter size-full wp-image-1440" title="Install Packages" alt="CTRL + SHIFT + P to bring up the package manager" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/install-packages.png" width="600" height="158" /></a>
+<a href="/images/install-packages.png"><img class="aligncenter size-full wp-image-1440" title="Install Packages" alt="CTRL + SHIFT + P to bring up the package manager" src="/images/install-packages.png" width="600" height="158" /></a>
 <blockquote>To access Package Manager type "<strong>Ctrl + Shift + P</strong>" to bring up a text box. Without using your mouse, begin to type "<em>Install package</em>" (without quotation marks). You may see a error related to git.exe, but you can ignore it at the moment.
 
 Then type "SublimeREPL" and hit enter when it's highlighted.</blockquote>
@@ -74,11 +74,11 @@ SublimeREPL essentially allows Sublime Text to access compilers or other program
 
 However, we need to tell SublimeREPL where R is located on our computer. We need to add R to the Windows Path.
 <blockquote>Find where R is installed. To do this, right click on your R icon--whether it's start menu, desktop, or taskbar. Under the "Shortcut" tab, note the file path under "Target:". Copy and paste this to a text document, you'll need this shortly.</blockquote>
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-path.png"><img class="aligncenter size-full wp-image-1436" title="R Path" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-path.png" width="377" height="533" /></a>
+<a href="/images/r-path.png"><img class="aligncenter size-full wp-image-1436" title="R Path" alt="" src="/images/r-path.png" width="377" height="533" /></a>
 
 Now,
 <blockquote>Click on <em>Preferences -&gt; Package Settings &gt; SublimeREPL &gt; Settings – User</em>. Use the screenshot or example below and paste in the path (thanks Wojciech!).</blockquote>
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/editing-path-in-sublime1.png"><img class="aligncenter size-full wp-image-1452" title="Editing PATH in Sublime" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/editing-path-in-sublime1.png" width="600" height="136" /></a>
+<a href="/images/editing-path-in-sublime1.png"><img class="aligncenter size-full wp-image-1452" title="Editing PATH in Sublime" alt="" src="/images/editing-path-in-sublime1.png" width="600" height="136" /></a>
 
 For example, you might paste:
 
@@ -88,7 +88,7 @@ Notice in my example that I am ignoring (disabled) some packages I have installe
 
 Now you have told where Sublime Text can look to find R.
 <blockquote>Open the R Console by clicking <em>Tools &gt; SublimeREPL &gt; R</em>. A window will pop up with the familiar R console header.</blockquote>
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-console2.png"><img class="aligncenter size-full wp-image-1431" title="R Console" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/r-console2.png" width="600" height="261" /></a>
+<a href="/images/r-console2.png"><img class="aligncenter size-full wp-image-1431" title="R Console" alt="" src="/images/r-console2.png" width="600" height="261" /></a>
 <h2><strong>Further Customization: R Shortcuts</strong></h2>
 The R console is fantastic because you can quickly execute code from a script. SublimeREPL does have this capability, but the R user will want to use Ctrl+R, or something similar. Additionally, the native shortcut to execute script has some issues because it conflicts with other shortcuts already built-in Sublime Text.
 
@@ -106,7 +106,7 @@ If you want to execute the entire script, type <strong>Shift + F7 </strong>and 
 
 A block of code can be sent by pressing <strong>Ctrl + Alt + Shift + R. </strong> A block is the code between { }, such as a function. If you want to view the code before it's executed, press <strong>Ctrl + Alt + Shift + R</strong>, then press R again.
 <h2><strong>Side-by-Side</strong></h2>
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/side-by-side-view.png"><img class="aligncenter size-full wp-image-1432" title="Side-by-side View" alt="" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2012/05/side-by-side-view.png" width="600" height="355" /></a>
+<a href="/images/side-by-side-view.png"><img class="aligncenter size-full wp-image-1432" title="Side-by-side View" alt="" src="/images/side-by-side-view.png" width="600" height="355" /></a>
 
 It is difficult when the script is in one window and the console in another, but it's easy to have the same feel as the R console.
 <blockquote>To have the script and console side-by-side, click <em>View &gt; Layout</em>. Choose either "Columns: 2" or "Rows: 2", depending on your preference.

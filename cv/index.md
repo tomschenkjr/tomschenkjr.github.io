@@ -53,9 +53,9 @@ _Circos Data Visualization How-To_. Packt Publishing. 2012
 
 ### Academic Publications
 
-"[The Effects of Graduate-student Unionization on Stipends](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/07/egsus-rhe.pdf)." 2013 (forthcoming), _The Review of Higher Education_.
+"[The Effects of Graduate-student Unionization on Stipends](/images/egsus-rhe.pdf)." 2013 (forthcoming), _The Review of Higher Education_.
 
-"[Going and Passing Through Community Colleges: Examining the Effectiveness of Project Lead The Way in STEM Pathways](http://www.tandfonline.com/doi/abs/10.1080/10668926.2013.740390)." 2013, Community College Journal of Research and Practice 37(3), p. 226-236. ([working paper version](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/06/Going-and-Passing-Through-Community-Colleges-Iowa-PLTW.pdf))
+"[Going and Passing Through Community Colleges: Examining the Effectiveness of Project Lead The Way in STEM Pathways](http://www.tandfonline.com/doi/abs/10.1080/10668926.2013.740390)." 2013, Community College Journal of Research and Practice 37(3), p. 226-236. ([working paper version](/images/Going-and-Passing-Through-Community-Colleges-Iowa-PLTW.pdf))
 
 "[Measuring Transitions into the Workforce as a Form of Accountability](http://www3.airweb.org/images/irapps32.pdf)." November 2011, _IR Applications_, No. 32.
 
@@ -99,11 +99,11 @@ _[Iowa Community College Tuition and Fees Report: Fiscal Year 2009](http://www.i
 
 "Causal Impact of Iowa Project Lead The Way on Achievement Scores" (w/ David Rethwisch, Frankie Santos Laanan, Melissa Chapman, Soko S. Starobin, Leaf Zhang). Working Paper. Iowa Department of Education. April 2010.
 
-"[Calculating Returns to Degree Using Student Longitudinal Data Systems](http://tomschenkjr.net/wordpress/wp-content/uploads/2010/02/calculating-the-rate-of-return-using-state-longitudinal-data.pdf)" (w/ Kiyokazu Matsuyama). Working Paper. Iowa Department of Education. February 2010.
+"[Calculating Returns to Degree Using Student Longitudinal Data Systems](/images/calculating-the-rate-of-return-using-state-longitudinal-data.pdf)" (w/ Kiyokazu Matsuyama). Working Paper. Iowa Department of Education. February 2010.
 
 "Current Status and Practice of Project Lead The Way in Iowa: A Longitudinal Evaluation" (w/ Frankie Santos Laanan, David Rethwisch, Soko S. Starobin, Leaf Zhang, Melissa Chapman). Working Paper. Iowa State University, College of Education. January 2010.
 
-"[A Conceptual and Operational Definition of STEM for Iowa Community Colleges](http://tomschenkjr.net/wordpress/wp-content/uploads/2010/01/defining-stem-2010-1-11.pdf)" Working Paper (w/ John Lund). Working Paper. January 2010.
+"[A Conceptual and Operational Definition of STEM for Iowa Community Colleges](/images/defining-stem-2010-1-11.pdf)" Working Paper (w/ John Lund). Working Paper. January 2010.
 
 "Ethnic and Racial Differences in Investment Behavior. " (w/ Tahira K. Hira and Cäzilia Loibl). Working Paper. Iowa State University. August 2007.
 
@@ -142,13 +142,13 @@ _[Iowa Community College Tuition and Fees Report: Fiscal Year 2009](http://www.i
 25.  American Educational Research Association, "Workforce Development During Economic Crisis: The Iowa Community College Response" (w/ Andrew Ryder, Linda Hagedorn, Soko Starobin, Dee Baird). Denver, Colorado. April 2010. (Poster Session)
 26.  American Educational Research Association,"Calculating Returns to Degree Using State Longitudinal Data Systems" (w/ Kiyo Matsuyama). Denver, Colorado. April 2010.
 27.  American Educational Research Association,"Initial Results of the Evaluation of Iowa Project Lead The Way" (w/ Frankie Santos Laanan, David Rethwisch, Soko Starobin, Melissa Chapman, and Yi Zhang). Denver, Colorado. April 2010.
-28.  American Educational Research Association, "[Visualizing Transitions into the Workforce](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyo Matsuyama). Denver, Colorado. April 2010. (Poster Session)
+28.  American Educational Research Association, "[Visualizing Transitions into the Workforce](/images/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyo Matsuyama). Denver, Colorado. April 2010. (Poster Session)
 29.  Midwest Association of Institutional Researchers,"[Calculating Returns to Degree Using Administrative Data](https://speakerdeck.com/u/tomschenkjr/p/calculating-returns-to-degree-using-administrative-data)." (w/ Kiyokazu Matsuyama), Kansas City, Missouri. November 2009.
-30.  Midwest Association of Institutional Researchers,"[Visualizing Transitions into the Workforce](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyokazu Matsuyama), Kansas City, Missouri. November 2009. (Poster Session)
+30.  Midwest Association of Institutional Researchers,"[Visualizing Transitions into the Workforce](/images/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyokazu Matsuyama), Kansas City, Missouri. November 2009. (Poster Session)
 31.  Iowa Association for Career and Technical Education,"Project Lead The Way Evaluation Study". Ames, Iowa. November 2009.
 32.  Association for the Study of Higher Education, "[A Longitudinal Evaluation of Project Lead The Way in the State of Iowa](http://www.iowa.gov/educate/index.php?option=com_docman&task=doc_download&gid=9016)" (w/ Frankie Santos Laanan, David Rethwisch, Soko Starobin, and Yi Zhang). Vancouver, Canada. November 2009. (Poster Session).
 33.  Association of Institutional Researchers – Upper Midwest,"A Longitudinal Evaluation of Iowa ‘Project Lead The Way’ in the State of Iowa." (w/ Yi Zhang, Frankie Santos Laanan, David Rethwisch, Soko Starobin, and Melissa Chapman), Minneapolis, Minnesota. October 2009. (Poster Session).
-34.  Association of Institutional Researchers – Upper Midwest,"[Visualizing Transitions into the Workforce](http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyokazu Matsuyama), Minneapolis, Minnesota. October 2009. (Poster Session).
+34.  Association of Institutional Researchers – Upper Midwest,"[Visualizing Transitions into the Workforce](/images/visualizing-transitions-poster-copy1.pdf)" (w/ Kiyokazu Matsuyama), Minneapolis, Minnesota. October 2009. (Poster Session).
 35.  Association of Institutional Researchers – Upper Midwest,"[Calculating Returns to Degree Using Administrative Data](https://speakerdeck.com/u/tomschenkjr/p/calculating-returns-to-degree-using-administrative-data)" (w/ Kiyokazu Matsuyama), Minneapolis, Minnesota. October 2009.
 36.  Iowa State University, Brown Bag Seminar, College of Education,"[Longitudinal Data and Higher Education Accountability](http://www.cclp.hs.iastate.edu/bb_schenk.html) ([recorded video](https://connect.extension.iastate.edu/p56023752/?launcher=false&fcsContent=true&pbMode=normal))", Ames, Iowa. September 2009.
 37.  Academy of Financial Services,"Risk Tolerance and Investment Confidence Among High-income Investors of Diverse Racial and Ethnic Backgrounds" (w/ Tahira K. Hira and Cazilia Loibl), Orlando, Florida. October 2007.

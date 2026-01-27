@@ -19,7 +19,7 @@ Of course shortages, by definition, indicate prices could (and possibly should) 
 
 However, a shortage could provide it's own marketing campaign by creating consumer curiosity and extra publicity from the odd coverage of the shortages. In a way, it increases demand through as a strange brother to <a href="http://en.wikipedia.org/wiki/Conspicuous_consumption">conspicuous consumption</a>. Yet, in order to capture additional revenues, Wii would need to either increase production prior to the holiday season or increase retail prices. Wii's on eBay for $900 does not help Nintendo. Nintendo did neither.
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/supplydemandwshortages1.png"><img class="aligncenter size-medium wp-image-408" title="Supply&amp;DemandwShortages" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/supplydemandwshortages1.png?w=283" alt="" width="283" height="300" /></a>
+<a href="/images/supplydemandwshortages1.png"><img class="aligncenter size-medium wp-image-408" title="Supply&amp;DemandwShortages" src="/images/supplydemandwshortages1.png?w=283" alt="" width="283" height="300" /></a>
 
 The supply and demand graph shows a representation of the market for Wii's. The equilibrium price (what prices should be) is higher that what is set by Nintendo. Low prices encourage lower production that cannot fulfull the market. The black triangle represents lost revenues which are captured on the second hand market, [(P* - <span style="text-decoration:underline;">P</span>)*(Q* - Qs)]/2 to be exact. Nintendo could profit by prices and output to P* and Q*, respectively. But without being able to expand production, as they claim, prices should increase to P hat.
 

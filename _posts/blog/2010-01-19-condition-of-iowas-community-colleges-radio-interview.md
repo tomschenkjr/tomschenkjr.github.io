@@ -10,7 +10,7 @@ share: true
 comment: true
 categories: blog 
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/01/condition-layers.png"><img class="size-full wp-image-527 alignleft" title="condition-layers" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/01/condition-layers.png" alt="" width="360" height="400" /></a>The <a href="http://www.iowa.gov/educate/index.php?option=com_content&amp;view=article&amp;id=1663&amp;catid=183&amp;Itemid=2471">Annual Condition of Iowa's Community Colleges 2009</a> was released last week which highlights a bunch of data collected by the Iowa Department of Education on Iowa's 15 community colleges.
+<a href="/images/condition-layers.png"><img class="size-full wp-image-527 alignleft" title="condition-layers" src="/images/condition-layers.png" alt="" width="360" height="400" /></a>The <a href="http://www.iowa.gov/educate/index.php?option=com_content&amp;view=article&amp;id=1663&amp;catid=183&amp;Itemid=2471">Annual Condition of Iowa's Community Colleges 2009</a> was released last week which highlights a bunch of data collected by the Iowa Department of Education on Iowa's 15 community colleges.
 
 Some basic stats show enrollment increased to 133,387 students last year, which was a substantial pick up since the prior year. However, the emphasis on this year's report was workforce outcomes. We already know <a href="http://www.bls.gov/emp/ep_chart_001.htm">education can increase earnings</a>. But in order to further education students have to face a trade-off. Student must forgo income, pay tuition, and push higher earnings until later in life. Is that investment worth it?
 

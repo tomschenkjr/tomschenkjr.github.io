@@ -15,7 +15,7 @@ tags:
   - bar graph
   - ukraine
 ---
-[caption id="attachment_660" align="alignleft" width="320" caption="Lies, Damn Lies, &amp; Bar Graphs"]<a href="http://censor.net.ua/go/offer/ResourceID/139972.html"><img class="size-full wp-image-660 " title="Yanukovych" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/06/yanukovych.jpg" alt="" width="320" height="240" /></a>[/caption]
+[caption id="attachment_660" align="alignleft" width="320" caption="Lies, Damn Lies, &amp; Bar Graphs"]<a href="http://censor.net.ua/go/offer/ResourceID/139972.html"><img class="size-full wp-image-660 " title="Yanukovych" src="/images/yanukovych.jpg" alt="" width="320" height="240" /></a>[/caption]
 
 Ukraine's President Yanukovych was caught up in a data visualization gaffe in front of a panel of economic experts. The chart he is holding reflects annual wages in Ukraine for the past six years. Notice the red bar is substantially lower than the prior years?
 

@@ -17,7 +17,7 @@ tags:
   - ManyEyes
   - wordle
 ---
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/what-we-said-2008.pdf"><img class="aligncenter size-full wp-image-259" title="What We Said 2008" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/10/what-we-said-2008.png" alt="What We Said 2008" width="600" height="260" /></a>
+<a href="/images/what-we-said-2008.pdf"><img class="aligncenter size-full wp-image-259" title="What We Said 2008" src="/images/what-we-said-2008.png" alt="What We Said 2008" width="600" height="260" /></a>
 
 Each year the Iowa Department of Education publishes <a href="http://www.iowa.gov/educate/index.php?option=com_content&amp;view=article&amp;id=1663&amp;catid=183&amp;Itemid=2471"><em>The Annual Condition of Iowa's Community Colleges</em></a>. In 2008 I was a part of a <a href="http://www.iowa.gov/educate/index.php?option=com_docman&amp;task=doc_download&amp;gid=6470">major redesign</a> which included adding meaningful narrative and emphasis on graphical representation of data. As we prepare the 2009 edition we are evaluating last years report. We had a few goals for the narrative last year. Namely, we wanted to avoid the continual reference to "community colleges", "Iowa", and be less repetitive. It's quite clear that the report is on Iowa community colleges, so it doesn't always need to be specified. We also wanted to limit phrases like "however", "nevertheless", and especially, "namely". We also wanted to emphasize joint enrollment (e.g., concurrent enrollment), so we wanted to see high usage of that word.
 

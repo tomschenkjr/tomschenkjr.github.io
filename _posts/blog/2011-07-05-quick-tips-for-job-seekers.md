@@ -20,7 +20,7 @@ There use to be a lot of talk about H1-B visas. Mostly the conversation focused 
 
 H1-B visa applications contain the company name, the occupation they're attempting to hire, the "target" salary for the worker, and prevailing salary taken from the Census or Bureau of Labor Services. Each visa application is a public record which you can use to search salaries for a new job or promotion. <a href="http://www.immihelp.com/h1b-sponsoring-companies-database/">Immihelp</a> is one site where you can search a database of H1-B applications, below is a screenshot for a Senior IT Application Analyst at Principal Life Insurance
 
-<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/07/h1-b-visa-data.png"><img class="aligncenter size-full wp-image-1220" title="H1-B Visa Data" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2011/07/h1-b-visa-data.png" alt="" width="400" height="453" /></a>
+<a href="/images/h1-b-visa-data.png"><img class="aligncenter size-full wp-image-1220" title="H1-B Visa Data" src="/images/h1-b-visa-data.png" alt="" width="400" height="453" /></a>
 
 If the same occupation as you're applying for is listed, then you should at least aim for the target salary. The prevailing wage amount gives you a sense of the minimum acceptable wage (unless you're demanding more) since it's the typical wage for that particular job in the U.S. In the above example, the prevailing wage data was taken from the <a href="http://www.bls.gov/oes/">Occupational Employment Statistics</a> survey.
 

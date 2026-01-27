@@ -25,13 +25,13 @@ Below is a graph plotting nominal actual versus nominal projected net revenue be
 
 <!--more-->
 
-[caption id="attachment_454" align="aligncenter" width="600" caption="State net revenue in millions"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-generalfund-03-09.png"><img class="size-full wp-image-454 " title="REC-generalfund-03-09" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-generalfund-03-09.png" alt="" width="600" height="438" /></a>[/caption]
+[caption id="attachment_454" align="aligncenter" width="600" caption="State net revenue in millions"]<a href="/images/rec-generalfund-03-09.png"><img class="size-full wp-image-454 " title="REC-generalfund-03-09" src="/images/rec-generalfund-03-09.png" alt="" width="600" height="438" /></a>[/caption]
 <p style="text-align:center;"></p>
 The current state budget is slightly over $6 billion, so each percent error is roughly $60 million. REC's current estimates of $5.4 billion in revenues will likely error by $210.6 million.
 
 Tax receipt forecasts were slightly more accurate, ff by an average of 3.7%. That means the projections fall apart on other receipts (e.g., judicial revenue) or fund transfers (e.g., lottery payments). Those revenues are probably more cyclical (e.g., liquor tax revenues increase when the economy declines) that's harder to predict.
 
-[caption id="attachment_455" align="aligncenter" width="600" caption="Tax receipts in millions"]<a href="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-taxreceipts-03-09.png"><img class="size-full wp-image-455" title="REC-taxreceipts-03-09" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2009/12/rec-taxreceipts-03-09.png" alt="" width="600" height="438" /></a>[/caption]
+[caption id="attachment_455" align="aligncenter" width="600" caption="Tax receipts in millions"]<a href="/images/rec-taxreceipts-03-09.png"><img class="size-full wp-image-455" title="REC-taxreceipts-03-09" src="/images/rec-taxreceipts-03-09.png" alt="" width="600" height="438" /></a>[/caption]
 <p style="text-align:center;"></p>
 Nevertheless, REC's margin is quite large. The problem seems to be two-fold. First, REC underestimated revenues between 2004 and 2008 which is understandable since they use conservative estimates.
 

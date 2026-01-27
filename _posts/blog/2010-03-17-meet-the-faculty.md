@@ -10,4 +10,4 @@ share: true
 comment: true
 categories: blog 
 ---
-<a href="http://www.grandview.edu/userdocs/AL%20Mag%20upload/index.html#/12/"><img class="aligncenter size-full wp-image-595" title="meet-faculty-tom-schenk" src="http://tomschenkjr.net/wordpress/wp-content/uploads/2010/03/meet-faculty-tom-schenk.png" alt="" width="600" height="101" /></a>Click the image for the full article.
+<a href="http://www.grandview.edu/userdocs/AL%20Mag%20upload/index.html#/12/"><img class="aligncenter size-full wp-image-595" title="meet-faculty-tom-schenk" src="/images/meet-faculty-tom-schenk.png" alt="" width="600" height="101" /></a>Click the image for the full article.
