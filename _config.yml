@@ -40,7 +40,7 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 owner:
   name: Tom Schenk Jr.
   avatar: bio-photo.jpg
-  email: /contact
+  email: mailto:tomschenkjr@gmail.com
   disqus-shortname:
   twitter: tomschenkjr
   facebook: #username

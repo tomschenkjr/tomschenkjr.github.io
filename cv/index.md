@@ -9,16 +9,13 @@ image:
 
 ## Current Professional Affiliations
 
-Chief Data Officer, City of Chicago
-Director of Analytics and Performance Management, Department of Innovation and Technology, City of Chicago
-
-Chair, Civic Analytics Network, Harvard University
+Managing Director, KPMG LLP
 
 ## Leadership & Advisory Roles
 
-Advisory Board Member – Northwestern’s Masters of Science in Analytics (MSiA)
+Board Member - [Federation of American Scientists (FAS)](https://fas.org/)
 
-Organizer – Chicago Data Visualization Group
+Advisory Board Member – [Northwestern’s Masters of Science in Machine Learning and Data Science](https://www.mccormick.northwestern.edu/machine-learning-data-science/)
 
 ## Educational Background
 
@@ -28,6 +25,8 @@ Drake University, Bachelor’s of Arts (B.A.). May 2005.
 
 ## Previous Professional Experience
 
+  * Co-Founder and Chair, Civic Analytics Network, Harvard University: 2016 - 2018
+  * Chief Data Officer and Deputy CIO, City of Chicago: November 2012 - June 2018
   * Senior Research Data Analyst, Northwestern University, Department of Medical Social Sciences: February 2012 – October 2012
   * Consultant, Iowa State University, Office of Community College Research & Policy: March 2012 – August 2012
   * Consultant – Institutional Effectiveness & Accountability, Iowa Department of Education: January 2008 – January 2012
