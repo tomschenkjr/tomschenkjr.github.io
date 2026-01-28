@@ -18,6 +18,6 @@ tags:
   - project lead the way
   - returns to education
 ---
-[slideshare id=2019982&amp;doc=longitudinaldataandhighereducationaccountability-090918165319-phpapp01]
+<script defer class="speakerdeck-embed" data-id="4fc98921af6a02001f027d83" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 Presented on September 17th at Iowa State University, College of Education. Iowa State <span style="text-decoration:line-through;">will be posting a video of the seminar in the next few days.</span> posted the video <a href="http://www.cclp.hs.iastate.edu/bb_schenk.html">here</a>.

@@ -18,4 +18,4 @@ tags:
 ---
 From 2007 International Society for the History, Philosophy, and Social Science of Biology in Exeter, England.
 
-&lt;script async data-id="4e80f3b81c938e0060000353" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;
+<script defer class="speakerdeck-embed" data-id="4e80f3b81c938e0060000353" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>

@@ -17,4 +17,4 @@ tags:
   - returns to degree
   - returns to education
 ---
-[slideshare id=2398491&amp;doc=calculatingreturnsusingadminstrativedata-091101182631-phpapp01]
+<script defer class="speakerdeck-embed" data-id="4fc985b5af6a02001f027574" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
