@@ -14,30 +14,53 @@
 		<title>Visualizing Transitions into the Workforce: 2006-2009</title>
 		<script type="text/javascript" src="https://d3js.org/d3.v2.min.js"></script> 
 		<script type="text/javascript">
+				// Local data (converted from workforceTransitions.csv)
+				var workforceData = {
+					"1": {NumLeaversCompleters: "454", TopSector1: "Wholesale Trade", TopSector2: "Manufacturing", TopSector3: "Retail Trade", TopSector4: "Administrative & Support", TopSector5: "Construction", TopSector1No: "84", TopSector2No: "65", TopSector3No: "65", TopSector4No: "40", TopSector5No: "33"},
+					"2": {NumLeaversCompleters: "655", TopSector1: "Construction", TopSector2: "Manufacturing", TopSector3: "Retail Trade", TopSector4: "Wholesale Trade", TopSector5: "Accommodation & Food Services", TopSector1No: "219", TopSector2No: "150", TopSector3No: "58", TopSector4No: "33", TopSector5No: "31"},
+					"3": {NumLeaversCompleters: "324", TopSector1: "Retail Trade", TopSector2: "Manufacturing", TopSector3: "Information", TopSector4: "Accommodation & Food Services", TopSector5: "Health Care & Social Assistance", TopSector1No: "65", TopSector2No: "61", TopSector3No: "31", TopSector4No: "27", TopSector5No: "20"},
+					"4": {NumLeaversCompleters: "1637", TopSector1: "Manufacturing", TopSector2: "Retail Trade", TopSector3: "Health Care & Social Assistance", TopSector4: "Finance & Insurance", TopSector5: "Accommodation & Food Services", TopSector1No: "248", TopSector2No: "246", TopSector3No: "202", TopSector4No: "175", TopSector5No: "119"},
+					"5": {NumLeaversCompleters: "26", TopSector1: "Educational Services", TopSector2: "Accommodation & Food Services", TopSector3: "Retail Trade", TopSector4: "Health Care & Social Assistance", TopSector5: "Information", TopSector1No: "12", TopSector2No: "4", TopSector3No: "3", TopSector4No: "3", TopSector5No: "1"},
+					"6": {NumLeaversCompleters: "34", TopSector1: "Finance & Insurance", TopSector2: "Manufacturing", TopSector3: "Health Care & Social Assistance", TopSector4: "Information", TopSector5: "Educational Services", TopSector1No: "18", TopSector2No: "5", TopSector3No: "4", TopSector4No: "2", TopSector5No: "2"},
+					"7": {NumLeaversCompleters: "123", TopSector1: "Health Care & Social Assistance", TopSector2: "Retail Trade", TopSector3: "Manufacturing", TopSector4: "Wholesale Trade", TopSector5: "Accommodation & Food Services", TopSector1No: "36", TopSector2No: "20", TopSector3No: "19", TopSector4No: "8", TopSector5No: "7"},
+					"8": {NumLeaversCompleters: "3915", TopSector1: "Health Care & Social Assistance", TopSector2: "Manufacturing", TopSector3: "Retail Trade", TopSector4: "Administrative & Support", TopSector5: "Educational Services", TopSector1No: "2333", TopSector2No: "301", TopSector3No: "222", TopSector4No: "172", TopSector5No: "167"},
+					"9": {NumLeaversCompleters: "213", TopSector1: "Accommodation & Food Services", TopSector2: "Retail Trade", TopSector3: "Health Care & Social Assistance", TopSector4: "Administrative & Support", TopSector5: "Manufacturing", TopSector1No: "76", TopSector2No: "27", TopSector3No: "21", TopSector4No: "19", TopSector5No: "18"},
+					"10": {NumLeaversCompleters: "348", TopSector1: "Health Care & Social Assistance", TopSector2: "Educational Services", TopSector3: "Retail Trade", TopSector4: "Accommodation & Food Services", TopSector5: "Manufacturing", TopSector1No: "117", TopSector2No: "78", TopSector3No: "44", TopSector4No: "24", TopSector5No: "22"},
+					"11": {NumLeaversCompleters: "628", TopSector1: "Manufacturing", TopSector2: "Retail Trade", TopSector3: "Finance & Insurance", TopSector4: "Information", TopSector5: "Administrative & Support", TopSector1No: "122", TopSector2No: "73", TopSector3No: "71", TopSector4No: "60", TopSector5No: "41"},
+					"12": {NumLeaversCompleters: "518", TopSector1: "Public Administration", TopSector2: "Manufacturing", TopSector3: "Retail Trade", TopSector4: "Administrative & Support", TopSector5: "Health Care & Social Assistance", TopSector1No: "113", TopSector2No: "77", TopSector3No: "57", TopSector4No: "46", TopSector5No: "44"},
+					"13": {NumLeaversCompleters: "499", TopSector1: "Manufacturing", TopSector2: "Construction", TopSector3: "Wholesale Trade", TopSector4: "Retail Trade", TopSector5: "Transportation & Warehousing", TopSector1No: "292", TopSector2No: "69", TopSector3No: "27", TopSector4No: "23", TopSector5No: "17"},
+					"14": {NumLeaversCompleters: "264", TopSector1: "Retail Trade", TopSector2: "Finance & Insurance", TopSector3: "Manufacturing", TopSector4: "Information", TopSector5: "Accommodation & Food Services", TopSector1No: "59", TopSector2No: "33", TopSector3No: "24", TopSector4No: "20", TopSector5No: "20"},
+					"15": {NumLeaversCompleters: "258", TopSector1: "Manufacturing", TopSector2: "Construction", TopSector3: "Professional, Scientific, & Technical Services", TopSector4: "Retail Trade", TopSector5: "Wholesale Trade", TopSector1No: "105", TopSector2No: "31", TopSector3No: "25", TopSector4No: "20", TopSector5No: "13"},
+					"16": {NumLeaversCompleters: "962", TopSector1: "Manufacturing", TopSector2: "Retail Trade", TopSector3: "Construction", TopSector4: "Wholesale Trade", TopSector5: "Other Services", TopSector1No: "260", TopSector2No: "190", TopSector3No: "107", TopSector4No: "105", TopSector5No: "79"},
+					"17": {NumLeaversCompleters: "9850", TopSector1: "Health Care & Social Assistance", TopSector2: "Manufacturing", TopSector3: "Retail Trade", TopSector4: "Accommodation & Food Services", TopSector5: "Educational Services", TopSector1No: "1657", TopSector2No: "1454", TopSector3No: "1285", TopSector4No: "793", TopSector5No: "761"}
+				};
+
 				function showUser(str)
 				{
 				if (str=="")
 				  {
 				  document.getElementById("txtHint").innerHTML="";
 				  return;
-				  } 
-				if (window.XMLHttpRequest)
-				  {// code for IE7+, Firefox, Chrome, Opera, Safari
-				  xmlhttp=new XMLHttpRequest();
 				  }
-				else
-				  {// code for IE6, IE5
-				  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				  }
-				xmlhttp.onreadystatechange=function()
-				  {
-				  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-				    {
-				    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-				    }
-				  }
-				xmlhttp.open("GET","getuser.php?q="+str,true);
-				xmlhttp.send();
+
+				var row = workforceData[str];
+				if (!row) {
+				  document.getElementById("txtHint").innerHTML="";
+				  return;
+				}
+
+				var html = "<table border='0'>" +
+				  "<tr><th colspan='2'><div class='clustersub'>Students</div></th></tr>" +
+				  "<tr><td colspan='2' align='right'><span class='clustercount'>" + row.NumLeaversCompleters + "</span></td></tr>" +
+				  "<tr><th colspan='2'><div class='clustersub'>Top 5 Industrial Sectors Employing this major</div></th></tr>" +
+				  "<tr><td>" + row.TopSector1 + "</td><td>" + row.TopSector1No + "</td></tr>" +
+				  "<tr><td>" + row.TopSector2 + "</td><td>" + row.TopSector2No + "</td></tr>" +
+				  "<tr><td>" + row.TopSector3 + "</td><td>" + row.TopSector3No + "</td></tr>" +
+				  "<tr><td>" + row.TopSector4 + "</td><td>" + row.TopSector4No + "</td></tr>" +
+				  "<tr><td>" + row.TopSector5 + "</td><td>" + row.TopSector5No + "</td></tr>" +
+				  "</table>";
+
+				document.getElementById("txtHint").innerHTML = html;
 				}
 		</script>
 		<link href="style.css" rel="stylesheet" type="text/css" />
