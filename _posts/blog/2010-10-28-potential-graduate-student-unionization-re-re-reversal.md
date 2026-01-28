@@ -19,7 +19,10 @@ tags:
   - national labor relations board
   - unions
 ---
-[caption id="" align="alignleft" width="202" caption="Courtesy of CGAphoto"]<a href="http://www.flickr.com/photos/cgin03/2455065805/sizes/m/in/photostream/"><img class="  " title="Union signs" src="http://farm3.static.flickr.com/2208/2455065805_7ac5ede399.jpg" alt="" width="202" height="280" /></a>[/caption]
+<figure class="align-left">
+<a href="http://www.flickr.com/photos/cgin03/2455065805/sizes/m/in/photostream/"><img src="http://farm3.static.flickr.com/2208/2455065805_7ac5ede399.jpg" alt="Union signs" width="202" height="280" /></a>
+<figcaption>Courtesy of CGAphoto</figcaption>
+</figure>
 
 New York University graduate students seems to have prevailed in <a href="http://www.insidehighered.com/news/2010/10/28/nlrb">letting</a> a regional director of National Labor Relations Board hear arguments on a long-standing union drive at the university. NYU graduate students have the magic touch, since they were the first to overturn a <del>40-year</del> 28-year precedent prohibiting graduate-student unions at private universities in 2000--only to be re-reversed in 2004. This case will be interesting to watch, as the ruling opens a new line of argumentation that may only have narrow implications for NYU students, apart from any other unionization efforts.
 

@@ -10,7 +10,10 @@ share: true
 comment: true
 categories: blog 
 ---
-[caption id="" align="aligncenter" width="500" caption="By KupKupLand"]<a href="http://www.flickr.com/photos/kupkup/441077551/"><img title="Couple in Kup, Kup" src="http://farm1.static.flickr.com/202/441077551_2e67c33a73.jpg" alt="By KupKupLand" width="500" height="375" /></a>[/caption]
+<figure class="align-center">
+<a href="http://www.flickr.com/photos/kupkup/441077551/"><img src="http://farm1.static.flickr.com/202/441077551_2e67c33a73.jpg" alt="Couple in Kup, Kup" width="500" height="375" /></a>
+<figcaption>By KupKupLand</figcaption>
+</figure>
 
 <a href="http://www.nytimes.com/2009/07/18/technology/internet/18shortcuts.html?ref=technology" target="_blank">New York Times</a> has an article on the science behind online dating sites, like eHarmony and Chemistry.com, that base matches on intensive surveys. The article notes:
 <blockquote>Gian Gonzaga, senior research scientist at eHarmony, said that studies his company had conducted of married people who met through eHarmony and a control group who met in other ways  found that those who linked up through eHarmony were happier.

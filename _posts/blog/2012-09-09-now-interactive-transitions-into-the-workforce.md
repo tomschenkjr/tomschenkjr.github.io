@@ -38,7 +38,10 @@ It was necessary to create an interactive website, first by trying to replicate 
 
 Even when we designed the original poster, we realized the difficulty reading the central diagram. We used small multiples to show each major.
 
-[caption id="attachment_1607" align="alignleft" width="600"]<a href="/images/Career-Cluster-Transitions-A-Simpler-View.png"><img class="size-full wp-image-1607" title="Career Cluster Transitions: A Simpler View" src="/images/Career-Cluster-Transitions-A-Simpler-View.png" alt="" width="600" height="369" /></a> Original poster design (left) and new drop-down menu (right)[/caption]
+<figure class="align-left">
+<a href="/images/Career-Cluster-Transitions-A-Simpler-View.png"><img src="/images/Career-Cluster-Transitions-A-Simpler-View.png" alt="Career Cluster Transitions: A Simpler View" width="600" height="369" /></a>
+<figcaption>Original poster design (left) and new drop-down menu (right)</figcaption>
+</figure>
 
 Now with the interactivity, this is moot. Instead, users can choose a major from the drop-down list to see detailed information about each major. Unlike before, a reader can also see precise numbers on the number of students and their top sectors.
 

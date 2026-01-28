@@ -13,7 +13,10 @@ tags:
   - infographics
   - political science
 ---
-[caption id="" align="aligncenter" width="585" caption="A One-Dimensional Approach"]<a href="http://infobeautiful.s3.amazonaws.com/leftright_US_1416.gif"><img title="Left versus Right - U.S." src="http://infobeautiful.s3.amazonaws.com/leftright_US_1416.gif" alt="" width="585" height="420" /></a>[/caption]
+<figure class="align-center">
+<a href="http://infobeautiful.s3.amazonaws.com/leftright_US_1416.gif"><img src="http://infobeautiful.s3.amazonaws.com/leftright_US_1416.gif" alt="Left versus Right - U.S." width="585" height="420" /></a>
+<figcaption>A One-Dimensional Approach</figcaption>
+</figure>
 <p style="text-align:center;"></p>
 Data visualization is great because it can merges statistics--a largely positive science--with explanation. Thus, unacquainted individuals fully into a conversation without relying on complex structures. However, I think many writers on data visualization underestimate how easy it is to forget the positive statements from statistics and turns into rhetorical statistics without a good theoretical basis.
 
@@ -25,6 +28,9 @@ Left versus right isn't a sufficient paradigm. In particular, the right has been
 
 The best model for political philosophies is a two-dimensional (instead of one-dimensional) system. The diagram below from <a href="www.politicalcompass.org">Political Compass</a> shows the stance of beliefs in the economic realm (horizontal axis) and the social realm (vertical axis) based on the 2008 elections.
 
-[caption id="" align="aligncenter" width="480" caption="A Two-Dimensional Approach"]<a href="http://politicalcompass.org/images/uscandidates2008.png"><img title="Two-dimension political spectrum" src="http://politicalcompass.org/images/uscandidates2008.png" alt="" width="480" height="400" /></a>[/caption]
+<figure class="align-center">
+<a href="http://politicalcompass.org/images/uscandidates2008.png"><img src="http://politicalcompass.org/images/uscandidates2008.png" alt="Two-dimension political spectrum" width="480" height="400" /></a>
+<figcaption>A Two-Dimensional Approach</figcaption>
+</figure>
 <p style="text-align:left;">A similar pattern is available for the European Union. <a href="http://infobeautiful.s3.amazonaws.com/leftright_EU_1416.gif">David and Stefanie's take on EU political spectrum</a> is here while <a href="http://politicalcompass.org/images/eu2008.gif">Political Compass has their own take</a>. Ultimately, this is tricky ground for infographics. David and Stefanie's analysis looks great, but it's based on a flawed model that has been adapted by others.</p>
 <p style="text-align:left;">Via <a href="http://coolinfographics.blogspot.com/2009/10/left-vs-right-ideology-concept-map.html">Cool Infographics</a> via <a href="http://www.vizworld.com/2009/10/political-spectrum-left/">VizWorld</a>.</p>

@@ -17,7 +17,10 @@ tags:
   - opendata
   - opengov
 ---
-[caption id="attachment_1980" align="aligncenter" width="640"]<a href="/images/16238710257_daaadfeefe_k.jpg"><img class="size-large wp-image-1980" src="/images/16238710257_daaadfeefe_k-1024x682.jpg" alt="Courtesy of Scott L. Licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)" width="640" height="426" /></a> Courtesy of Scott L. Licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)[/caption]
+<figure class="align-center">
+<a href="/images/16238710257_daaadfeefe_k.jpg"><img src="/images/16238710257_daaadfeefe_k-1024x682.jpg" alt="Taxi cab" width="640" height="426" /></a>
+<figcaption>Courtesy of Scott L. Licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)</figcaption>
+</figure>
 
 Open data has a number of uses: transparency, economic development, galvanizing technology, and also consumer protection. A recent experience crystalized this fact. Super Bowl 49 was a messy day in Chicago. By the time the game ended, 16" of snow had accumulated on the ground, and would still fall throughout the night. A hard, gusty wind sandblasted snow against your face. Needless to say, it was unpleasant to be outside.
 
