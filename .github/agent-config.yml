@@ -1,0 +1,17 @@
+# .github/agent-config.yml
+#
+# Optional per-repo config for issue-agent.
+# The orchestrator reads this via the GitHub API; no local clone needed.
+# Omit the file entirely to accept defaults (integration_branch=dev, production_branch=main).
+
+# Branch the agent creates its working branch from and merges work into.
+integration_branch: gh-pages
+
+# Branch the final PR targets (what humans merge to ship).
+production_branch: master
+
+# Single-branch repos (no staging layer) — set both to the same value.
+# The pipeline will skip the final PR step since the code is already there.
+#
+#   integration_branch: main
+#   production_branch: main
