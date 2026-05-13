@@ -1,0 +1,253 @@
+# .github/workflows/agent-pipeline.yml
+#
+# Runs Plan → QA → Code → QC → PR for a single issue.
+# Triggered by the Mac orchestrator (workflow_dispatch) or manually.
+#
+# Drop this file into each repo you want the agent to manage.
+# Requires repo secret: ANTHROPIC_API_KEY
+
+name: Agent Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to process"
+        required: true
+        type: string
+
+permissions:
+  contents: write       # push to dev branch
+  issues: write         # comment on issues
+  pull-requests: write  # open PR to main
+  actions: read
+
+concurrency:
+  # One run per issue at a time; new dispatches wait rather than collide.
+  group: agent-${{ github.event.inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.vars.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - id: vars
+        run: echo "branch=agent/issue-${{ inputs.issue_number }}" >> "$GITHUB_OUTPUT"
+
+      - name: Create working branch off dev
+        run: |
+          git config user.name  "claude-agent[bot]"
+          git config user.email "claude-agent[bot]@users.noreply.github.com"
+          git checkout -B "${{ steps.vars.outputs.branch }}" origin/dev
+          git push -f origin "${{ steps.vars.outputs.branch }}"
+
+      # ─── PLAN ─────────────────────────────────────────────────────────────
+      # Claude reads the issue + repo, writes a plan comment, and emits a
+      # prompt for the next stage (saved as an artifact).
+      - name: Plan
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the PLAN agent. Use the `planning` skill in
+            `.claude/skills/planning/SKILL.md`.
+
+            Issue: #${{ inputs.issue_number }} in ${{ github.repository }}.
+
+            Steps:
+              1. Read the issue (title, body, comments) via `gh issue view`.
+              2. Inspect the repo to understand the code that will change.
+              3. Post a single comment on the issue with the plan. Format
+                 per the planning skill (Summary / Approach / Files / Risks).
+              4. Write the implementation prompt to `.agent/next-prompt.md`
+                 — concrete enough for the QA and Code stages to act on
+                 without re-reading the issue.
+
+            Do not modify source code in this step.
+          claude_args: |
+            --allowed-tools "Bash(gh issue view:*),Bash(gh issue comment:*),Bash(git:*),Read,Write,Glob,Grep"
+            --max-turns 25
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload plan prompt
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-prompt
+          path: .agent/next-prompt.md
+          if-no-files-found: error
+
+  qa:
+    needs: plan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.branch }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: next-prompt
+          path: .agent
+
+      # ─── QA: write tests first ───────────────────────────────────────────
+      - name: Write failing tests
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the QA agent. Use `.claude/skills/test-authoring/SKILL.md`.
+
+            The plan is in `.agent/next-prompt.md`.
+
+            Write unit tests that:
+              - encode the behavior the plan promises,
+              - are expected to FAIL right now (the code doesn't exist yet),
+              - follow this repo's existing test conventions
+                (detect language/framework from the repo).
+
+            Commit the tests to the working branch with message:
+              "test: add failing tests for issue #${{ inputs.issue_number }}"
+          claude_args: |
+            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep"
+            --max-turns 30
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  code:
+    needs: [plan, qa]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.branch }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: next-prompt
+          path: .agent
+
+      # ─── CODE + QC LOOP ──────────────────────────────────────────────────
+      # Claude implements the plan, then runs the test suite. If anything
+      # fails, it iterates. Bounded by --max-turns so a runaway run can't
+      # rack up tokens forever.
+      - name: Implement and run tests
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the CODE agent. Use `.claude/skills/implementation/SKILL.md`.
+
+            The plan is in `.agent/next-prompt.md`. Failing tests are already
+            on the branch.
+
+            Loop:
+              1. Detect this repo's toolchain (look at package.json /
+                 pyproject.toml / Cargo.toml / go.mod / etc).
+              2. Implement the plan.
+              3. Run the test command for this repo.
+              4. If tests fail, fix and re-run. Do NOT relax the tests
+                 unless they're objectively wrong; explain in a commit if so.
+              5. Stop when the suite is green OR after 5 fix attempts.
+
+            Commit incrementally. Final commit message:
+              "feat: implement issue #${{ inputs.issue_number }}"
+          claude_args: |
+            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep"
+            --max-turns 60
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push to dev
+        # Fast-forward dev to the agent branch only if all tests passed.
+        # If the prior step failed, this step is skipped and the branch
+        # stays as a "stuck" artifact for human inspection.
+        run: |
+          git config user.name  "claude-agent[bot]"
+          git config user.email "claude-agent[bot]@users.noreply.github.com"
+          git fetch origin dev
+          git checkout dev
+          git merge --ff-only "${{ needs.plan.outputs.branch }}" || {
+            echo "non-fast-forward; opening PR to dev instead"
+            gh pr create --base dev --head "${{ needs.plan.outputs.branch }}" \
+              --title "agent: issue #${{ inputs.issue_number }} (merge to dev)" \
+              --body  "Auto-generated. Could not fast-forward."
+            exit 0
+          }
+          git push origin dev
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  integration:
+    needs: [plan, code]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      # ─── Wait for dev's own CI to pass ───────────────────────────────────
+      # This assumes you have a separate CI workflow on push-to-dev.
+      # We poll its latest run for the commit we just pushed.
+      - name: Wait for dev CI
+        run: |
+          sha=$(git rev-parse HEAD)
+          echo "waiting on CI for $sha"
+          for i in $(seq 1 60); do  # ~30 minutes max
+            state=$(gh run list --branch dev --commit "$sha" \
+              --json status,conclusion --jq '.[0] | "\(.status):\(.conclusion)"' || echo "missing:")
+            echo "  [$i] $state"
+            case "$state" in
+              completed:success) exit 0 ;;
+              completed:*) echo "CI failed"; exit 1 ;;
+            esac
+            sleep 30
+          done
+          echo "timed out waiting for CI"; exit 1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Open PR dev → main
+        run: |
+          # Idempotent: if a PR already exists for dev→main, do nothing.
+          existing=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' || echo "")
+          if [[ -n "$existing" ]]; then
+            gh pr comment "$existing" --body "Issue #${{ inputs.issue_number }} merged into dev and passed CI."
+          else
+            gh pr create --base main --head dev \
+              --title "Release: dev → main" \
+              --body "Includes issue #${{ inputs.issue_number }}. CI green on dev. Ready for human review."
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup:
+    needs: [integration]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove in-progress label
+        run: |
+          gh issue edit "${{ inputs.issue_number }}" \
+            --repo "${{ github.repository }}" \
+            --remove-label "agent-in-progress" || true
+
+          # Tag the outcome so the orchestrator and humans can see at a glance.
+          if [[ "${{ needs.integration.result }}" == "success" ]]; then
+            gh issue edit "${{ inputs.issue_number }}" \
+              --repo "${{ github.repository }}" \
+              --add-label "agent-pr-ready" || true
+          else
+            gh issue edit "${{ inputs.issue_number }}" \
+              --repo "${{ github.repository }}" \
+              --add-label "agent-failed" || true
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
