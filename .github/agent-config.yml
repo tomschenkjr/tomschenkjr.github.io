@@ -5,7 +5,7 @@
 # Omit the file entirely to accept defaults (integration_branch=dev, production_branch=main).
 
 # Branch the agent creates its working branch from and merges work into.
-integration_branch: gh-pages
+integration_branch: dev
 
 # Branch the final PR targets (what humans merge to ship).
 production_branch: master
