@@ -70,8 +70,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p .agent
-          claude -p --max-turns 25 \
-            --allowed-tools 'Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep' \
+          claude -p \
             'You are the PLAN agent. Use the planning skill in
             .claude/skills/planning/SKILL.md.
 
@@ -87,7 +86,9 @@ jobs:
                  -- concrete enough for the QA and Code stages to act on
                  without re-reading the issue.
 
-            Do not modify source code in this step.'
+            Do not modify source code in this step.' \
+            --max-turns 25 \
+            --allowed-tools 'Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep'
 
       - name: Post plan comment
         run: |
@@ -133,8 +134,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          claude -p --max-turns 30 \
-            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep' \
+          claude -p \
             'You are the QA agent. Use .claude/skills/test-authoring/SKILL.md.
 
             The plan is in .agent/next-prompt.md.
@@ -146,7 +146,9 @@ jobs:
                 (detect language/framework from the repo).
 
             Commit the tests to the working branch with message:
-              "test: add failing tests for issue #${{ inputs.issue_number }}"'
+              "test: add failing tests for issue #${{ inputs.issue_number }}"' \
+            --max-turns 30 \
+            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep'
 
   code:
     needs: [plan, qa]
@@ -178,8 +180,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          claude -p --max-turns 60 \
-            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep' \
+          claude -p \
             'You are the CODE agent. Use .claude/skills/implementation/SKILL.md.
 
             The plan is in .agent/next-prompt.md. Failing tests are already
@@ -206,7 +207,9 @@ jobs:
             .agent/failure-comment.md instead:
               - What you attempted
               - Which test is still failing and the exact error
-              - Suggested next steps for a human to continue'
+              - Suggested next steps for a human to continue' \
+            --max-turns 60 \
+            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep'
 
       - name: Push to integration branch
         # Fast-forward the integration branch to the agent branch only if all
