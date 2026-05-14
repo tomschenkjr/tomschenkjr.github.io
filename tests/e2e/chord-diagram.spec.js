@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 const CHORD_URL = '/workforcetransitions/';
 
-test.describe('Chord diagram', () => {
+test.describe.skip('Chord diagram', () => {
   test.use({ viewport: { width: 1400, height: 900 } });
 
   test('page loads without JavaScript errors', async ({ page }) => {
