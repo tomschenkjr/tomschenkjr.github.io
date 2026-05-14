@@ -23,7 +23,7 @@ on:
       production_branch:
         description: "Branch the final PR targets"
         required: false
-        default: "main"
+        default: "master"
         type: string
 
 permissions:
