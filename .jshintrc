@@ -16,5 +16,8 @@
   "trailing": false,
   "undef": true,
   "multistr": true,
-  "expr": true
+  "expr": true,
+  "globals": {
+    "responsiveNav": false
+  }
 }

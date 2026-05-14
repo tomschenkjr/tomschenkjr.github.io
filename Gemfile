@@ -13,3 +13,6 @@ gem "logger"
 
 # Windows support
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Testing
+gem "html-proofer", "~> 5.0"

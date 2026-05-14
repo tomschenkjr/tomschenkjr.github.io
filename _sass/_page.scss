@@ -137,7 +137,7 @@ span + .entry-title {
 		@include span-columns(2.5);
 	}
 
-	& > span {
+	> span {
 		padding: 0 20px 10px 0;
 		display: inline-block;
 
