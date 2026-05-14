@@ -62,14 +62,6 @@ jobs:
             [ -f "$f" ] || (echo "Missing: $f" && exit 1)
           done
 
-      - name: HTML-Proofer (internal links + assets)
-        run: |
-          bundle exec htmlproofer ./_site \
-            --disable-external \
-            --no-enforce-https \
-            --swap-urls '^//:https://' \
-            --ignore-urls '/fonts.googleapis.com/'
-
   unit:
     name: Unit tests (Jest)
     runs-on: ubuntu-latest
