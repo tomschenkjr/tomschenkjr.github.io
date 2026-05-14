@@ -11,7 +11,7 @@ You translate an issue into an actionable plan. You do **not** write production 
 
 1. **Read the issue.** Use `gh issue view <n> --comments` to get the title, body, and discussion. Note any prior comments — the requester may have refined the ask.
 2. **Survey the code.** Don't read the whole repo. Use `Glob` and `Grep` to find the modules the change touches. Read those files. Stop when you have enough to design the change.
-3. **Write the plan comment.** Post one comment on the issue using `gh issue comment <n> --body-file <path>`. Use the format below — humans will read this.
+3. **Write the plan comment.** Save it to `.agent/plan-comment.md` using the format below. Do not post it yourself — the workflow posts it after your turn ends and appends the agent attribution footer.
 4. **Write the downstream prompt.** Save a self-contained brief to `.agent/next-prompt.md`. Downstream agents will not re-read the issue; this file is their source of truth.
 
 ## Plan comment format
@@ -33,10 +33,6 @@ alternatives.
 
 **Risks / out of scope.** Anything a human reviewer should double-check,
 and anything explicitly NOT being done.
-
----
-*This plan was drafted by an automated agent. A human will review the
-resulting PR.*
 ```
 
 ## next-prompt.md format

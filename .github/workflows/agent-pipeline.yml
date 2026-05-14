@@ -31,6 +31,7 @@ permissions:
   issues: write         # comment on issues
   pull-requests: write  # open PR to main
   actions: read
+  id-token: write       # required by claude-code-action to fetch OIDC token
 
 concurrency:
   # One run per issue at a time; new dispatches wait rather than collide.
@@ -74,16 +75,27 @@ jobs:
             Steps:
               1. Read the issue (title, body, comments) via `gh issue view`.
               2. Inspect the repo to understand the code that will change.
-              3. Post a single comment on the issue with the plan. Format
-                 per the planning skill (Summary / Approach / Files / Risks).
+              3. Write the plan to `.agent/plan-comment.md`. Format per the
+                 planning skill (Summary / Approach / Files / Risks). Do NOT
+                 post it yourself — the workflow posts it after you finish.
               4. Write the implementation prompt to `.agent/next-prompt.md`
                  — concrete enough for the QA and Code stages to act on
                  without re-reading the issue.
 
             Do not modify source code in this step.
           claude_args: |
-            --allowed-tools "Bash(gh issue view:*),Bash(gh issue comment:*),Bash(git:*),Read,Write,Glob,Grep"
+            --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep"
             --max-turns 25
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Post plan comment
+        run: |
+          printf '\n---\n*:robot: This plan was drafted by an automated agent ([claude-code-action](https://github.com/anthropics/claude-code-action)). A human will review the resulting PR before anything merges.*\n' \
+            >> .agent/plan-comment.md
+          gh issue comment "${{ inputs.issue_number }}" \
+            --repo "${{ github.repository }}" \
+            --body-file .agent/plan-comment.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -169,6 +181,17 @@ jobs:
 
             Commit incrementally. Final commit message:
               "feat: implement issue #${{ inputs.issue_number }}"
+
+            When the suite is green, write `.agent/completion-comment.md`:
+              - What was implemented (plain English, brief)
+              - Any deviations from `.agent/next-prompt.md` and why
+              - Anything a reviewer should pay close attention to in the PR
+
+            If you are stopping after exhausting fix attempts, write
+            `.agent/failure-comment.md` instead:
+              - What you attempted
+              - Which test is still failing and the exact error
+              - Suggested next steps for a human to continue
           claude_args: |
             --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep"
             --max-turns 60
@@ -192,6 +215,20 @@ jobs:
             exit 0
           }
           git push origin ${{ inputs.integration_branch }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Post completion comment
+        if: success()
+        run: |
+          if [[ ! -f .agent/completion-comment.md ]]; then exit 0; fi
+          {
+            cat .agent/completion-comment.md
+            printf '\n---\n*:robot: Posted automatically after the agent completed implementation. See the PR for full changes.*\n'
+          } > /tmp/completion.md
+          gh issue comment "${{ inputs.issue_number }}" \
+            --repo "${{ github.repository }}" \
+            --body-file /tmp/completion.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -248,10 +285,60 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   cleanup:
-    needs: [integration]
+    needs: [plan, qa, code, integration]
     if: always()
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.integration_branch }}
+          fetch-depth: 0
+
+      - name: Post failure comment
+        if: needs.integration.result != 'success'
+        run: |
+          branch="agent/issue-${{ inputs.issue_number }}"
+
+          # Identify the furthest stage that failed.
+          if   [[ "${{ needs.plan.result }}"        == "failure" ]]; then stage="PLAN"
+          elif [[ "${{ needs.qa.result }}"          == "failure" ]]; then stage="QA (test authoring)"
+          elif [[ "${{ needs.code.result }}"        == "failure" ]]; then stage="CODE (implementation)"
+          else                                                             stage="INTEGRATION (CI on \`${{ inputs.integration_branch }}\`)"
+          fi
+
+          # Pull Claude's failure note from the agent branch if it exists.
+          git fetch origin "${branch}" --depth=10 2>/dev/null || true
+          git checkout "origin/${branch}" -- .agent/ 2>/dev/null || true
+
+          {
+            echo "## Agent stopped — ${stage} stage"
+            echo ""
+            if [[ -f .agent/failure-comment.md ]]; then
+              cat .agent/failure-comment.md
+            else
+              echo "The pipeline stopped at the **${stage}** stage. See the [workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) for full logs."
+              echo ""
+              log=$(git log "origin/${branch}" --oneline -5 2>/dev/null || true)
+              if [[ -n "$log" ]]; then
+                echo "**Recent commits on \`${branch}\`:**"
+                echo '```'
+                echo "$log"
+                echo '```'
+              fi
+            fi
+            echo ""
+            echo "**To continue manually:** check out \`${branch}\`, finish the work, push, and open a PR. Remove the \`agent-failed\` label when resolved."
+            echo ""
+            echo "---"
+            echo "*:robot: Posted automatically after the agent pipeline stopped.*"
+          } > /tmp/failure.md
+
+          gh issue comment "${{ inputs.issue_number }}" \
+            --repo "${{ github.repository }}" \
+            --body-file /tmp/failure.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Remove in-progress label
         run: |
           gh issue edit "${{ inputs.issue_number }}" \

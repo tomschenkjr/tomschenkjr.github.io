@@ -45,6 +45,22 @@ If you change a test, **say so in the commit body** with the reason. The PR revi
 - The final commit on the branch should be the one that makes the suite green. Reviewers will read history top-down.
 - Never `git push --force` to `dev`. The workflow handles the push.
 
+## Status files
+
+The workflow posts issue comments based on two files you write to `.agent/`:
+
+**On success** — write `.agent/completion-comment.md`:
+- What was implemented (plain English, brief)
+- Any deviations from the plan and why
+- Anything a reviewer should pay close attention to in the PR
+
+**On giving up** — write `.agent/failure-comment.md` instead:
+- What you attempted
+- Which test is still failing and the exact error message
+- Suggested next steps for a human to continue
+
+The workflow appends attribution footers and posts both; you only write the content.
+
 ## When to give up
 
-If after 5 fix attempts a test is still red, or you find the plan is structurally wrong (e.g., the proposed API can't satisfy a stated requirement), stop. Commit what you have, write a final commit `wip: stuck on <X>` explaining the blocker. The pipeline will leave the branch behind and label the issue `agent-failed` so a human can take over.
+If after 5 fix attempts a test is still red, or you find the plan is structurally wrong (e.g., the proposed API can't satisfy a stated requirement), stop. Write `.agent/failure-comment.md` (see above), then commit what you have with `wip: stuck on <X>` explaining the blocker. The pipeline will leave the branch behind and label the issue `agent-failed` so a human can take over.
