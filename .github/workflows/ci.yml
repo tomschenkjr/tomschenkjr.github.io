@@ -54,6 +54,7 @@ jobs:
         env:
           JEKYLL_ENV: production
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_REPO_NWO: ${{ github.repository }}
 
       - name: Verify required output files
         run: |
