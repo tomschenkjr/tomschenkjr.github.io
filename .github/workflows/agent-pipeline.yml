@@ -15,6 +15,16 @@ on:
         description: "Issue number to process"
         required: true
         type: string
+      integration_branch:
+        description: "Branch the agent pushes work to"
+        required: false
+        default: "dev"
+        type: string
+      production_branch:
+        description: "Branch the final PR targets"
+        required: false
+        default: "main"
+        type: string
 
 permissions:
   contents: write       # push to dev branch
@@ -35,17 +45,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: dev
+          ref: ${{ inputs.integration_branch }}
           fetch-depth: 0
 
       - id: vars
         run: echo "branch=agent/issue-${{ inputs.issue_number }}" >> "$GITHUB_OUTPUT"
 
-      - name: Create working branch off dev
+      - name: Create working branch off integration branch
         run: |
           git config user.name  "claude-agent[bot]"
           git config user.email "claude-agent[bot]@users.noreply.github.com"
-          git checkout -B "${{ steps.vars.outputs.branch }}" origin/dev
+          git checkout -B "${{ steps.vars.outputs.branch }}" origin/${{ inputs.integration_branch }}
           git push -f origin "${{ steps.vars.outputs.branch }}"
 
       # ─── PLAN ─────────────────────────────────────────────────────────────
@@ -165,23 +175,23 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push to dev
-        # Fast-forward dev to the agent branch only if all tests passed.
-        # If the prior step failed, this step is skipped and the branch
-        # stays as a "stuck" artifact for human inspection.
+      - name: Push to integration branch
+        # Fast-forward the integration branch to the agent branch only if all
+        # tests passed. If the prior step failed, this step is skipped and the
+        # branch stays as a "stuck" artifact for human inspection.
         run: |
           git config user.name  "claude-agent[bot]"
           git config user.email "claude-agent[bot]@users.noreply.github.com"
-          git fetch origin dev
-          git checkout dev
+          git fetch origin ${{ inputs.integration_branch }}
+          git checkout ${{ inputs.integration_branch }}
           git merge --ff-only "${{ needs.plan.outputs.branch }}" || {
-            echo "non-fast-forward; opening PR to dev instead"
-            gh pr create --base dev --head "${{ needs.plan.outputs.branch }}" \
-              --title "agent: issue #${{ inputs.issue_number }} (merge to dev)" \
+            echo "non-fast-forward; opening PR to ${{ inputs.integration_branch }} instead"
+            gh pr create --base ${{ inputs.integration_branch }} --head "${{ needs.plan.outputs.branch }}" \
+              --title "agent: issue #${{ inputs.issue_number }} (merge to ${{ inputs.integration_branch }})" \
               --body  "Auto-generated. Could not fast-forward."
             exit 0
           }
-          git push origin dev
+          git push origin ${{ inputs.integration_branch }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -191,17 +201,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: dev
+          ref: ${{ inputs.integration_branch }}
 
-      # ─── Wait for dev's own CI to pass ───────────────────────────────────
-      # This assumes you have a separate CI workflow on push-to-dev.
-      # We poll its latest run for the commit we just pushed.
-      - name: Wait for dev CI
+      # ─── Wait for integration branch CI to pass ──────────────────────────
+      # This assumes you have a separate CI workflow on push to the integration
+      # branch. We poll its latest run for the commit we just pushed.
+      - name: Wait for integration CI
         run: |
           sha=$(git rev-parse HEAD)
           echo "waiting on CI for $sha"
           for i in $(seq 1 60); do  # ~30 minutes max
-            state=$(gh run list --branch dev --commit "$sha" \
+            state=$(gh run list --branch ${{ inputs.integration_branch }} --commit "$sha" \
               --json status,conclusion --jq '.[0] | "\(.status):\(.conclusion)"' || echo "missing:")
             echo "  [$i] $state"
             case "$state" in
@@ -214,16 +224,25 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Open PR dev → main
+      - name: Open PR to production
+        # Skipped when integration and production are the same branch —
+        # the code is already where it needs to be.
+        if: inputs.integration_branch != inputs.production_branch
         run: |
-          # Idempotent: if a PR already exists for dev→main, do nothing.
-          existing=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' || echo "")
+          # Idempotent: if a PR already exists for this pair, comment instead.
+          existing=$(gh pr list \
+            --base ${{ inputs.production_branch }} \
+            --head ${{ inputs.integration_branch }} \
+            --state open --json number --jq '.[0].number' || echo "")
           if [[ -n "$existing" ]]; then
-            gh pr comment "$existing" --body "Issue #${{ inputs.issue_number }} merged into dev and passed CI."
+            gh pr comment "$existing" \
+              --body "Issue #${{ inputs.issue_number }} merged into ${{ inputs.integration_branch }} and passed CI."
           else
-            gh pr create --base main --head dev \
-              --title "Release: dev → main" \
-              --body "Includes issue #${{ inputs.issue_number }}. CI green on dev. Ready for human review."
+            gh pr create \
+              --base ${{ inputs.production_branch }} \
+              --head ${{ inputs.integration_branch }} \
+              --title "Release: ${{ inputs.integration_branch }} → ${{ inputs.production_branch }}" \
+              --body "Includes issue #${{ inputs.issue_number }}. CI green on ${{ inputs.integration_branch }}. Ready for human review."
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
