@@ -14,5 +14,8 @@ gem "logger"
 # Windows support
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Silence Faraday v2 deprecation warning from github-pages
+gem "faraday-retry"
+
 # Testing
 gem "html-proofer", "~> 5.0"
