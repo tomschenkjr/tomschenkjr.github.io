@@ -31,7 +31,6 @@ permissions:
   issues: write         # comment on issues
   pull-requests: write  # open PR to main
   actions: read
-  id-token: write       # required by claude-code-action to fetch OIDC token
 
 concurrency:
   # One run per issue at a time; new dispatches wait rather than collide.
@@ -62,36 +61,40 @@ jobs:
       # ─── PLAN ─────────────────────────────────────────────────────────────
       # Claude reads the issue + repo, writes a plan comment, and emits a
       # prompt for the next stage (saved as an artifact).
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Plan
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            You are the PLAN agent. Use the `planning` skill in
-            `.claude/skills/planning/SKILL.md`.
-
-            Issue: #${{ inputs.issue_number }} in ${{ github.repository }}.
-
-            Steps:
-              1. Read the issue (title, body, comments) via `gh issue view`.
-              2. Inspect the repo to understand the code that will change.
-              3. Write the plan to `.agent/plan-comment.md`. Format per the
-                 planning skill (Summary / Approach / Files / Risks). Do NOT
-                 post it yourself — the workflow posts it after you finish.
-              4. Write the implementation prompt to `.agent/next-prompt.md`
-                 — concrete enough for the QA and Code stages to act on
-                 without re-reading the issue.
-
-            Do not modify source code in this step.
-          claude_args: |
-            --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep"
-            --max-turns 25
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p .agent
+          cat > /tmp/prompt.txt << 'EOF'
+You are the PLAN agent. Use the `planning` skill in
+`.claude/skills/planning/SKILL.md`.
+
+Issue: #${{ inputs.issue_number }} in ${{ github.repository }}.
+
+Steps:
+  1. Read the issue (title, body, comments) via `gh issue view`.
+  2. Inspect the repo to understand the code that will change.
+  3. Write the plan to `.agent/plan-comment.md`. Format per the
+     planning skill (Summary / Approach / Files / Risks). Do NOT
+     post it yourself — the workflow posts it after you finish.
+  4. Write the implementation prompt to `.agent/next-prompt.md`
+     — concrete enough for the QA and Code stages to act on
+     without re-reading the issue.
+
+Do not modify source code in this step.
+EOF
+          claude -p --max-turns 25 \
+            --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep" \
+            "$(cat /tmp/prompt.txt)"
 
       - name: Post plan comment
         run: |
-          printf '\n---\n*:robot: This plan was drafted by an automated agent ([claude-code-action](https://github.com/anthropics/claude-code-action)). A human will review the resulting PR before anything merges.*\n' \
+          printf '\n---\n*:robot: This plan was drafted by an automated agent. A human will review the resulting PR before anything merges.*\n' \
             >> .agent/plan-comment.md
           gh issue comment "${{ inputs.issue_number }}" \
             --repo "${{ github.repository }}" \
@@ -120,28 +123,36 @@ jobs:
           path: .agent
 
       # ─── QA: write tests first ───────────────────────────────────────────
+      - name: Configure git
+        run: |
+          git config user.name  "claude-agent[bot]"
+          git config user.email "claude-agent[bot]@users.noreply.github.com"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Write failing tests
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            You are the QA agent. Use `.claude/skills/test-authoring/SKILL.md`.
-
-            The plan is in `.agent/next-prompt.md`.
-
-            Write unit tests that:
-              - encode the behavior the plan promises,
-              - are expected to FAIL right now (the code doesn't exist yet),
-              - follow this repo's existing test conventions
-                (detect language/framework from the repo).
-
-            Commit the tests to the working branch with message:
-              "test: add failing tests for issue #${{ inputs.issue_number }}"
-          claude_args: |
-            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 30
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat > /tmp/prompt.txt << 'EOF'
+You are the QA agent. Use `.claude/skills/test-authoring/SKILL.md`.
+
+The plan is in `.agent/next-prompt.md`.
+
+Write unit tests that:
+  - encode the behavior the plan promises,
+  - are expected to FAIL right now (the code doesn't exist yet),
+  - follow this repo's existing test conventions
+    (detect language/framework from the repo).
+
+Commit the tests to the working branch with message:
+  "test: add failing tests for issue #${{ inputs.issue_number }}"
+EOF
+          claude -p --max-turns 30 \
+            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep" \
+            "$(cat /tmp/prompt.txt)"
 
   code:
     needs: [plan, qa]
@@ -160,43 +171,51 @@ jobs:
       # Claude implements the plan, then runs the test suite. If anything
       # fails, it iterates. Bounded by --max-turns so a runaway run can't
       # rack up tokens forever.
+      - name: Configure git
+        run: |
+          git config user.name  "claude-agent[bot]"
+          git config user.email "claude-agent[bot]@users.noreply.github.com"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Implement and run tests
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            You are the CODE agent. Use `.claude/skills/implementation/SKILL.md`.
-
-            The plan is in `.agent/next-prompt.md`. Failing tests are already
-            on the branch.
-
-            Loop:
-              1. Detect this repo's toolchain (look at package.json /
-                 pyproject.toml / Cargo.toml / go.mod / etc).
-              2. Implement the plan.
-              3. Run the test command for this repo.
-              4. If tests fail, fix and re-run. Do NOT relax the tests
-                 unless they're objectively wrong; explain in a commit if so.
-              5. Stop when the suite is green OR after 5 fix attempts.
-
-            Commit incrementally. Final commit message:
-              "feat: implement issue #${{ inputs.issue_number }}"
-
-            When the suite is green, write `.agent/completion-comment.md`:
-              - What was implemented (plain English, brief)
-              - Any deviations from `.agent/next-prompt.md` and why
-              - Anything a reviewer should pay close attention to in the PR
-
-            If you are stopping after exhausting fix attempts, write
-            `.agent/failure-comment.md` instead:
-              - What you attempted
-              - Which test is still failing and the exact error
-              - Suggested next steps for a human to continue
-          claude_args: |
-            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 60
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat > /tmp/prompt.txt << 'EOF'
+You are the CODE agent. Use `.claude/skills/implementation/SKILL.md`.
+
+The plan is in `.agent/next-prompt.md`. Failing tests are already
+on the branch.
+
+Loop:
+  1. Detect this repo's toolchain (look at package.json /
+     pyproject.toml / Cargo.toml / go.mod / etc).
+  2. Implement the plan.
+  3. Run the test command for this repo.
+  4. If tests fail, fix and re-run. Do NOT relax the tests
+     unless they're objectively wrong; explain in a commit if so.
+  5. Stop when the suite is green OR after 5 fix attempts.
+
+Commit incrementally. Final commit message:
+  "feat: implement issue #${{ inputs.issue_number }}"
+
+When the suite is green, write `.agent/completion-comment.md`:
+  - What was implemented (plain English, brief)
+  - Any deviations from `.agent/next-prompt.md` and why
+  - Anything a reviewer should pay close attention to in the PR
+
+If you are stopping after exhausting fix attempts, write
+`.agent/failure-comment.md` instead:
+  - What you attempted
+  - Which test is still failing and the exact error
+  - Suggested next steps for a human to continue
+EOF
+          claude -p --max-turns 60 \
+            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep" \
+            "$(cat /tmp/prompt.txt)"
 
       - name: Push to integration branch
         # Fast-forward the integration branch to the agent branch only if all
