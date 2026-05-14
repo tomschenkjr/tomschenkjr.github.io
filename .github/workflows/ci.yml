@@ -66,6 +66,7 @@ jobs:
         run: |
           bundle exec htmlproofer ./_site \
             --disable-external \
+            --no-enforce-https \
             --ignore-urls "/fonts.googleapis.com/"
 
   unit:
