@@ -8,7 +8,7 @@
 integration_branch: dev
 
 # Branch the final PR targets (what humans merge to ship).
-production_branch: main
+production_branch: master
 
 # Single-branch repos (no staging layer) — set both to the same value.
 # The pipeline will skip the final PR step since the code is already there.
