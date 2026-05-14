@@ -88,7 +88,7 @@ jobs:
             Do not modify source code in this step.
           claude_args: |
             --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep"
-            --max-turns 25
+            --max-turns 100
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
