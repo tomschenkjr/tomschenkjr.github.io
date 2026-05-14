@@ -23,7 +23,7 @@ on:
       production_branch:
         description: "Branch the final PR targets"
         required: false
-        default: "master"
+        default: "main"
         type: string
 
 permissions:
@@ -70,27 +70,24 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p .agent
-          cat > /tmp/prompt.txt << 'EOF'
-You are the PLAN agent. Use the `planning` skill in
-`.claude/skills/planning/SKILL.md`.
-
-Issue: #${{ inputs.issue_number }} in ${{ github.repository }}.
-
-Steps:
-  1. Read the issue (title, body, comments) via `gh issue view`.
-  2. Inspect the repo to understand the code that will change.
-  3. Write the plan to `.agent/plan-comment.md`. Format per the
-     planning skill (Summary / Approach / Files / Risks). Do NOT
-     post it yourself — the workflow posts it after you finish.
-  4. Write the implementation prompt to `.agent/next-prompt.md`
-     — concrete enough for the QA and Code stages to act on
-     without re-reading the issue.
-
-Do not modify source code in this step.
-EOF
           claude -p --max-turns 25 \
-            --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep" \
-            "$(cat /tmp/prompt.txt)"
+            --allowed-tools 'Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep' \
+            'You are the PLAN agent. Use the planning skill in
+            .claude/skills/planning/SKILL.md.
+
+            Issue: #${{ inputs.issue_number }} in ${{ github.repository }}.
+
+            Steps:
+              1. Read the issue (title, body, comments) via gh issue view.
+              2. Inspect the repo to understand the code that will change.
+              3. Write the plan to .agent/plan-comment.md. Format per the
+                 planning skill (Summary / Approach / Files / Risks). Do NOT
+                 post it yourself -- the workflow posts it after you finish.
+              4. Write the implementation prompt to .agent/next-prompt.md
+                 -- concrete enough for the QA and Code stages to act on
+                 without re-reading the issue.
+
+            Do not modify source code in this step.'
 
       - name: Post plan comment
         run: |
@@ -136,23 +133,20 @@ EOF
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat > /tmp/prompt.txt << 'EOF'
-You are the QA agent. Use `.claude/skills/test-authoring/SKILL.md`.
-
-The plan is in `.agent/next-prompt.md`.
-
-Write unit tests that:
-  - encode the behavior the plan promises,
-  - are expected to FAIL right now (the code doesn't exist yet),
-  - follow this repo's existing test conventions
-    (detect language/framework from the repo).
-
-Commit the tests to the working branch with message:
-  "test: add failing tests for issue #${{ inputs.issue_number }}"
-EOF
           claude -p --max-turns 30 \
-            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep" \
-            "$(cat /tmp/prompt.txt)"
+            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep' \
+            'You are the QA agent. Use .claude/skills/test-authoring/SKILL.md.
+
+            The plan is in .agent/next-prompt.md.
+
+            Write unit tests that:
+              - encode the behavior the plan promises,
+              - are expected to FAIL right now (the code does not exist yet),
+              - follow the repo existing test conventions
+                (detect language/framework from the repo).
+
+            Commit the tests to the working branch with message:
+              "test: add failing tests for issue #${{ inputs.issue_number }}"'
 
   code:
     needs: [plan, qa]
@@ -184,38 +178,35 @@ EOF
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat > /tmp/prompt.txt << 'EOF'
-You are the CODE agent. Use `.claude/skills/implementation/SKILL.md`.
-
-The plan is in `.agent/next-prompt.md`. Failing tests are already
-on the branch.
-
-Loop:
-  1. Detect this repo's toolchain (look at package.json /
-     pyproject.toml / Cargo.toml / go.mod / etc).
-  2. Implement the plan.
-  3. Run the test command for this repo.
-  4. If tests fail, fix and re-run. Do NOT relax the tests
-     unless they're objectively wrong; explain in a commit if so.
-  5. Stop when the suite is green OR after 5 fix attempts.
-
-Commit incrementally. Final commit message:
-  "feat: implement issue #${{ inputs.issue_number }}"
-
-When the suite is green, write `.agent/completion-comment.md`:
-  - What was implemented (plain English, brief)
-  - Any deviations from `.agent/next-prompt.md` and why
-  - Anything a reviewer should pay close attention to in the PR
-
-If you are stopping after exhausting fix attempts, write
-`.agent/failure-comment.md` instead:
-  - What you attempted
-  - Which test is still failing and the exact error
-  - Suggested next steps for a human to continue
-EOF
           claude -p --max-turns 60 \
-            --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep" \
-            "$(cat /tmp/prompt.txt)"
+            --allowed-tools 'Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep' \
+            'You are the CODE agent. Use .claude/skills/implementation/SKILL.md.
+
+            The plan is in .agent/next-prompt.md. Failing tests are already
+            on the branch.
+
+            Loop:
+              1. Detect the repo toolchain (look at package.json /
+                 pyproject.toml / Cargo.toml / go.mod / etc).
+              2. Implement the plan.
+              3. Run the test command for this repo.
+              4. If tests fail, fix and re-run. Do NOT relax the tests
+                 unless they are objectively wrong; explain in a commit if so.
+              5. Stop when the suite is green OR after 5 fix attempts.
+
+            Commit incrementally. Final commit message:
+              "feat: implement issue #${{ inputs.issue_number }}"
+
+            When the suite is green, write .agent/completion-comment.md:
+              - What was implemented (plain English, brief)
+              - Any deviations from .agent/next-prompt.md and why
+              - Anything a reviewer should pay close attention to in the PR
+
+            If you are stopping after exhausting fix attempts, write
+            .agent/failure-comment.md instead:
+              - What you attempted
+              - Which test is still failing and the exact error
+              - Suggested next steps for a human to continue'
 
       - name: Push to integration branch
         # Fast-forward the integration branch to the agent branch only if all
