@@ -2,12 +2,13 @@
 	<nav role="navigation" id="site-nav" class="animated drop">
 	    <ul>
       {% for link in site.data.navigation %}
-		    {% if link.url contains 'http' %}
-		        {% assign domain = '' %}
-		        {% else %}
+		    {% assign first_char = link.url | slice: 0, 1 %}
+		    {% if first_char == '/' %}
 		        {% assign domain = site.url %}
+		        {% else %}
+		        {% assign domain = '' %}
 		    {% endif %}
-		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains '://' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
 		  {% endfor %}
 	    </ul>
 	</nav>
