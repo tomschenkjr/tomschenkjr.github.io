@@ -246,8 +246,8 @@ jobs:
           ref: ${{ inputs.integration_branch }}
 
       # ─── Wait for integration branch CI to pass ──────────────────────────
-      # Uncomment to gate the final PR on CI passing on the integration branch.
-      # Requires a CI workflow triggered on push to that branch.
+      # This assumes you have a separate CI workflow on push to the integration
+      # branch. We poll its latest run for the commit we just pushed.
       # - name: Wait for integration CI
       #   run: |
       #     sha=$(git rev-parse HEAD)
