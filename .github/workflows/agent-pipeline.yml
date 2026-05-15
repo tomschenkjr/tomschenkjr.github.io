@@ -246,25 +246,25 @@ jobs:
           ref: ${{ inputs.integration_branch }}
 
       # ─── Wait for integration branch CI to pass ──────────────────────────
-      # This assumes you have a separate CI workflow on push to the integration
-      # branch. We poll its latest run for the commit we just pushed.
-      - name: Wait for integration CI
-        run: |
-          sha=$(git rev-parse HEAD)
-          echo "waiting on CI for $sha"
-          for i in $(seq 1 60); do  # ~30 minutes max
-            state=$(gh run list --branch ${{ inputs.integration_branch }} --commit "$sha" \
-              --json status,conclusion --jq '.[0] | "\(.status):\(.conclusion)"' || echo "missing:")
-            echo "  [$i] $state"
-            case "$state" in
-              completed:success) exit 0 ;;
-              completed:*) echo "CI failed"; exit 1 ;;
-            esac
-            sleep 30
-          done
-          echo "timed out waiting for CI"; exit 1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Uncomment to gate the final PR on CI passing on the integration branch.
+      # Requires a CI workflow triggered on push to that branch.
+      # - name: Wait for integration CI
+      #   run: |
+      #     sha=$(git rev-parse HEAD)
+      #     echo "waiting on CI for $sha"
+      #     for i in $(seq 1 60); do  # ~30 minutes max
+      #       state=$(gh run list --branch ${{ inputs.integration_branch }} --commit "$sha" \
+      #         --json status,conclusion --jq '.[0] | "\(.status):\(.conclusion)"' || echo "missing:")
+      #       echo "  [$i] $state"
+      #       case "$state" in
+      #         completed:success) exit 0 ;;
+      #         completed:*) echo "CI failed"; exit 1 ;;
+      #       esac
+      #       sleep 30
+      #     done
+      #     echo "timed out waiting for CI"; exit 1
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Open PR to production
         # Skipped when integration and production are the same branch —
