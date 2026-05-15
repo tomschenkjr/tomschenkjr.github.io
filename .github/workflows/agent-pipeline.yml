@@ -23,7 +23,7 @@ on:
       production_branch:
         description: "Branch the final PR targets"
         required: false
-        default: "master"
+        default: "main"
         type: string
 
 permissions:
@@ -56,6 +56,7 @@ jobs:
         run: |
           git config user.name  "claude-agent[bot]"
           git config user.email "claude-agent[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git checkout -B "${{ steps.vars.outputs.branch }}" origin/${{ inputs.integration_branch }}
           git push -f origin "${{ steps.vars.outputs.branch }}"
 
@@ -88,7 +89,7 @@ jobs:
             Do not modify source code in this step.
           claude_args: |
             --allowed-tools "Bash(gh issue view:*),Bash(git:*),Read,Write,Glob,Grep"
-            --max-turns 100
+            --max-turns 25
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -142,7 +143,7 @@ jobs:
               "test: add failing tests for issue #${{ inputs.issue_number }}"
           claude_args: |
             --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 100
+            --max-turns 30
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -197,7 +198,7 @@ jobs:
               - Suggested next steps for a human to continue
           claude_args: |
             --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 100
+            --max-turns 60
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -208,6 +209,7 @@ jobs:
         run: |
           git config user.name  "claude-agent[bot]"
           git config user.email "claude-agent[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git fetch origin ${{ inputs.integration_branch }}
           git checkout ${{ inputs.integration_branch }}
           git merge --ff-only "${{ needs.plan.outputs.branch }}" || {
