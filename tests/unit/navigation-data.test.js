@@ -34,15 +34,15 @@ describe('_data/navigation.yml integrity', () => {
     });
   });
 
-  test('all urls start with /', () => {
+  test('all urls are internal paths or mailto links', () => {
     navigation.forEach(item => {
-      expect(item.url.startsWith('/')).toBe(true);
+      expect(item.url.startsWith('/') || item.url.startsWith('mailto:')).toBe(true);
     });
   });
 
   test('required destinations are present', () => {
     const urls = navigation.map(item => item.url);
-    ['/blog/', '/about/', '/cv/', '/contact/', '/search/'].forEach(url => {
+    ['/blog/', '/about/', '/cv/', 'mailto:tomschenkjr@gmail.com', '/search/'].forEach(url => {
       expect(urls).toContain(url);
     });
   });
