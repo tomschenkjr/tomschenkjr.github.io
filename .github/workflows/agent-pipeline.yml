@@ -142,7 +142,7 @@ jobs:
               "test: add failing tests for issue #${{ inputs.issue_number }}"
           claude_args: |
             --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(pytest:*),Bash(cargo:*),Bash(go:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 30
+            --max-turns 100
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -197,7 +197,7 @@ jobs:
               - Suggested next steps for a human to continue
           claude_args: |
             --allowed-tools "Bash(git:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*),Bash(pytest:*),Bash(python:*),Bash(uv:*),Bash(cargo:*),Bash(go:*),Bash(make:*),Read,Write,Edit,Glob,Grep"
-            --max-turns 60
+            --max-turns 100
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
